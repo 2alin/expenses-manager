@@ -62,9 +62,9 @@ export const setTotalSpent = (
   totalSpent,
 });
 
-export const setExpensesFilter = (filterOps: object) => ({
-  type: 'SET_EXPENSES_FILTER',
-  filterOps,
+export const setExpensesList = (expensesList: any) => ({
+  type: 'SET_EXPENSES_LIST',
+  expensesList,
 });
 
 export const addComment = (id: string, comment: string) => ({
@@ -77,4 +77,9 @@ export const addReceipt = (id: string, receipt: string) => ({
   type: 'ADD_RECEIPT',
   id,
   receipt,
+});
+
+export const setExpensesFilter = (filterOps: object) => ({
+  type: 'SET_EXPENSES_FILTER',
+  filterOps,
 });
