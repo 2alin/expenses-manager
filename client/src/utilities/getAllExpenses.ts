@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 function getAllExpenses() {
-  let expensesList: object[] = [];
+  let expensesList = [];
 
   return axios
     .get('http://localhost:3000/expenses')

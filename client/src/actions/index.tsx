@@ -26,6 +26,18 @@ export interface TotalSpentAction {
   totalSpent: AmountCurrency;
 }
 
+export interface Expense {
+  id: string;
+  amount: {value: number, currency: string};
+  date: Date;
+  merchant: string;
+  receipts: string[];
+  comment: string;
+  category: string;
+  user: {first: string, email: string, last: string};
+  index: number;
+}
+
 export interface FilterOptions {
   startDate: Date;
   endDate: Date;
@@ -62,7 +74,7 @@ export const setTotalSpent = (
   totalSpent,
 });
 
-export const setExpensesList = (expensesList: object[]) => ({
+export const setExpensesList = (expensesList: Array<Expense>) => ({
   type: 'SET_EXPENSES_LIST',
   expensesList,
 });

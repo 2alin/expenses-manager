@@ -10,6 +10,8 @@ import {
   setBudget,
   setTotalSpent,
   setExpensesList,
+  addComment,
+  Expense,
 } from './actions';
 import getAllExpenses from './utilities/getAllExpenses';
 
@@ -34,8 +36,10 @@ store.dispatch(setTotalSpent({ amount: 3100, currency: 'USD' }));
 // Fetch expenses list from API and dispatch action into the store
 console.log('dispatch expenses list');
 getAllExpenses().then(res => {
-  store.dispatch(setExpensesList(res as object[]));
+  store.dispatch(setExpensesList(res));
   console.log(store.getState());
+  store.dispatch(addComment(res[4].id, 'this is a comment'));
+  console.log(store.getState().expenses.list[4]);
 });
 // store.dispatch(setExpensesList(getAllExpenses()));
 
