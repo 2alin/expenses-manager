@@ -8,17 +8,14 @@ interface State {
   total: number;
 }
 
-const expenses = (state:State = initialState, action: any) => {
+const expenses = (state: State = initialState, action: any) => {
   switch (action.type) {
     case 'SET_EXPENSES_LIST':
-      console.log('hi');
-      console.log(action.expensesList.length);
       return {
         list: action.expensesList,
         total: action.expensesList.length,
       };
     case 'ADD_COMMENT':
-      console.log('there');
       return {
         list: state.list.map(expense =>
           expense.id === action.id

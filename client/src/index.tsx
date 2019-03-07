@@ -31,14 +31,10 @@ console.log('dispatch finances actions');
 store.dispatch(setBudget({ amount: 4500, currency: 'USD' }));
 store.dispatch(setTotalSpent({ amount: 3100, currency: 'USD' }));
 
-store.dispatch(setExpensesList(['ho', 'la']));
-
 // Fetch expenses list from API and dispatch action into the store
 console.log('dispatch expenses list');
 getAllExpenses().then(res => {
-  console.log('papa')
-  const expensesList = res;
-  store.dispatch(setExpensesList(expensesList));
+  store.dispatch(setExpensesList(res as object[]));
   console.log(store.getState());
 });
 // store.dispatch(setExpensesList(getAllExpenses()));

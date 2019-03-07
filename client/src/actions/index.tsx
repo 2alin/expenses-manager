@@ -62,7 +62,7 @@ export const setTotalSpent = (
   totalSpent,
 });
 
-export const setExpensesList = (expensesList: any) => ({
+export const setExpensesList = (expensesList: object[]) => ({
   type: 'SET_EXPENSES_LIST',
   expensesList,
 });

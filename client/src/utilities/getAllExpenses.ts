@@ -6,7 +6,6 @@ function getAllExpenses() {
   return axios
     .get('http://localhost:3000/expenses')
     .then(res => {
-      console.log('first');
       // get the number of expenses
       const numberExpenses = res.data.total;
       // fetch all expenses list
@@ -15,9 +14,7 @@ function getAllExpenses() {
       });
     })
     .then(res => {
-      console.log('second');
       // get the complete list of expenses
-      // console.log(res.data.expenses);
       expensesList = res.data.expenses;
       return expensesList;
     })
