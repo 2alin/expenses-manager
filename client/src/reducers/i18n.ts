@@ -3,11 +3,6 @@ import { combineReducers } from 'redux';
 // TS Interface imports
 import { LanguageAction, CurrencyAction } from '../actions';
 
-const initialState = {
-  language: 'EN',
-  currency: 'USD',
-};
-
 const language = (state = 'EN', action: LanguageAction) => {
   switch (action.type) {
     case 'SET_LANGUAGE':

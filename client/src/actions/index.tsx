@@ -11,6 +11,20 @@ export interface CurrencyAction {
   type: string;
   currency: string;
 }
+export interface AmountCurrency {
+  currency: string;
+  amount: number;
+}
+
+export interface BudgetAction {
+  type: string;
+  budget: AmountCurrency;
+}
+
+export interface TotalSpentAction {
+  type: string;
+  totalSpent: AmountCurrency;
+}
 
 export interface FilterOptions {
   startDate: Date;
@@ -34,6 +48,18 @@ export const setLanguage = (language: string): LanguageAction => ({
 export const setCurrency = (currency: string): CurrencyAction => ({
   type: 'SET_CURRENCY',
   currency,
+});
+
+export const setBudget = (budget: AmountCurrency): BudgetAction => ({
+  type: 'SET_BUDGET',
+  budget,
+});
+
+export const setTotalSpent = (
+  totalSpent: AmountCurrency
+): TotalSpentAction => ({
+  type: 'SET_TOTAL_SPENT',
+  totalSpent,
 });
 
 export const setExpensesFilter = (filterOps: object) => ({
