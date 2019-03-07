@@ -11,7 +11,7 @@ import {
   setTotalSpent,
   setExpensesList,
   addComment,
-  Expense,
+  setExpensesFilter
 } from './actions';
 import getAllExpenses from './utilities/getAllExpenses';
 
@@ -32,6 +32,15 @@ store.dispatch(setCurrency('USD'));
 console.log('dispatch finances actions');
 store.dispatch(setBudget({ amount: 4500, currency: 'USD' }));
 store.dispatch(setTotalSpent({ amount: 3100, currency: 'USD' }));
+console.log('dispatch filter options');
+const myFilter = {
+  startDate: {isOn: true, value: new Date},
+  endDate: {isOn: true, value: new Date},
+  currency: {isOn: false, value: 'EUR'},
+  minAmount: {isOn: true, value: 5000}, 
+  maxAmount: {isOn: false, value: 0}, 
+}
+store.dispatch(setExpensesFilter(myFilter))
 
 // Fetch expenses list from API and dispatch action into the store
 console.log('dispatch expenses list');

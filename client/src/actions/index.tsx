@@ -39,11 +39,11 @@ export interface Expense {
 }
 
 export interface FilterOptions {
-  startDate: Date;
-  endDate: Date;
-  expenseCurrency: string;
-  minAmount: number;
-  maxAmount: number;
+  startDate: {isOn: boolean, value: Date};
+  endDate: {isOn: boolean, value: Date};
+  currency: {isOn: boolean, value: string};
+  minAmount: {isOn: boolean, value: number};
+  maxAmount: {isOn: boolean, value: number};
 }
 
 //--------------
@@ -91,7 +91,7 @@ export const addReceipt = (id: string, receipt: string) => ({
   receipt,
 });
 
-export const setExpensesFilter = (filterOps: object) => ({
+export const setExpensesFilter = (options: FilterOptions) => ({
   type: 'SET_EXPENSES_FILTER',
-  filterOps,
+  options,
 });
