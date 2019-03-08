@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-import { setCurrency } from '../actions';
+import { setCurrency, setVisibleOptions } from '../actions';
 import { Store, CurrencyAction } from '../types';
 import I18nList from '../components/I18nList';
 import { EXRATES } from '../utilities/constants';
-import { Dispatch } from 'react';
 
 const mapStateToProps = (state: Store) => ({
   // pass the currency keys as an ordered list
@@ -12,10 +11,12 @@ const mapStateToProps = (state: Store) => ({
   active: state.i18n.currency,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<CurrencyAction>) => ({
+
+
+const mapDispatchToProps = (dispatch: any) => ({
   onClick: (curr: string) => {
-    console.log(curr);
-    return dispatch(setCurrency(curr));
+    dispatch(setVisibleOptions(false, 'NONE'));
+    dispatch(setCurrency(curr));
   },
 });
 

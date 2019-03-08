@@ -1,7 +1,7 @@
 import React from 'react';
 import I18nBar from './I18nBar';
 import styles from './App.module.scss';
-import OptionsContainer from './OptionsContainer';
+import OptionsDisplayed from '../containers/OptionsDisplayed';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           <I18nBar />
         </div>
         {/* container to display options for language, currency and expenses list filter */}
-        <OptionsContainer />
+        <OptionsDisplayed/>
       </div>
     </React.Fragment>
   );

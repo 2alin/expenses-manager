@@ -1,0 +1,29 @@
+.container {
+  background: lightblue;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  &.displayed {
+    display: block;
+    background: pink;
+  }
+}
+.main {
+  position: relative;
+  max-width: 800px;
+  height: 100%;
+  max-height: 400px;
+  margin: 0 auto;
+  background: lightblue;
+  .exit {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: red;
+  }
+}

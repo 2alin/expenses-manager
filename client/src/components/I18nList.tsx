@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './I18nLink.module.scss';
+import styles from './I18nList.module.scss';
 
 interface Props {
   list: string[];
@@ -8,10 +8,16 @@ interface Props {
 }
 
 function I18nLink({ list, active, onClick }: Props) {
+  console.log('active');
+  console.log(active);
   return (
-    <ul>
+    <ul className = {styles.list}>
       {list.map(lang => (
-        <li key={lang} onClick={() => onClick(lang)}>
+        <li
+          key={lang}
+          className={lang === active ? styles.active : ''}
+          onClick={() => onClick(lang)}
+        >
           {lang}
         </li>
       ))}

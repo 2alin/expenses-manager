@@ -51,3 +51,12 @@ export const setExpensesFilter = (options: FilterOptions) => ({
   type: 'SET_EXPENSES_FILTER',
   options,
 });
+
+export const setVisibleOptions = (
+  displayed: boolean,
+  optionsToShow: string
+) => ({
+  type: 'SET_VISIBLE_OPTIONS',
+  displayed,
+  optionsToShow
+});

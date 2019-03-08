@@ -48,12 +48,18 @@ export interface FilterOptions {
   maxAmount: FilterOption;
 }
 
+export interface OptionsContainer {
+  displayed: boolean;
+  optionsToShow: string;
+}
+
 export interface Store {
   i18n: I18n;
   budget: Budget;
   totalSpent: TotalSpent;
   expenses: Expenses;
   filterOptions: FilterOptions;
+  optionsContainer: OptionsContainer;
 }
 
 //-------------------
@@ -78,6 +84,12 @@ export interface BudgetAction {
 export interface TotalSpentAction {
   type: string;
   totalSpent: Amount;
+}
+
+export interface VisibleOptionsAction{
+  type:string;
+  displayed: boolean;
+  optionsToShow: string;
 }
 
 // export interface ExpensesListAction {

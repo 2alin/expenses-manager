@@ -16,7 +16,13 @@ import {
 } from './actions';
 import getAllExpenses from './utilities/getAllExpenses';
 
-const store = createStore(rootReducer);
+// comment next lines before delivering project
+import { applyMiddleware } from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
+const store = createStore(rootReducer, composeWithDevTools())
+
+// uncomment next line before delivering project
+// const store = createStore(rootReducer);
 
 // // Log the initial state
 // console.log(store.getState());
