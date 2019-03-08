@@ -1,0 +1,10 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(200, 200, 100, .5)
+}
+
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+}
