@@ -55,3 +55,49 @@ export interface Store {
   expenses: Expenses;
   filterOptions: FilterOptions;
 }
+
+//-------------------
+// Action Interfaces
+//-------------------
+
+export interface LanguageAction {
+  type: string;
+  language: string;
+}
+
+export interface CurrencyAction {
+  type: string;
+  currency: string;
+}
+
+export interface BudgetAction {
+  type: string;
+  budget: Amount;
+}
+
+export interface TotalSpentAction {
+  type: string;
+  totalSpent: Amount;
+}
+
+// export interface ExpensesListAction {
+//   type: string;
+//   expensesList: Array<Expense>;
+// }
+
+// export interface CommentAction {
+//   type: string;
+//   id: number;
+//   comment: string;
+// }
+
+// export interface ReceiptAction {
+//   type: string;
+//   id: number;
+//   receipt: string;
+// }
+
+export interface FilterAction {
+  type: string;
+  options: FilterOptions;
+}

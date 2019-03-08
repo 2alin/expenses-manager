@@ -1,22 +1,27 @@
-// TS Interface imports
-import {BudgetAction, TotalSpentAction} from '../actions'
+import { Amount, BudgetAction, TotalSpentAction } from '../types';
 
-export const budget = (state = {amount:0, currency:'USD'}, action: BudgetAction) => {
-  switch(action.type) {
+const initialState: Amount = {
+  value: 0,
+  currency: 'USD',
+};
+
+export const budget = (state: Amount = initialState, action: BudgetAction) => {
+  switch (action.type) {
     case 'SET_BUDGET':
       return action.budget;
     default:
       return state;
-
   }
-}
+};
 
-export const totalSpent = (state = {amount:0, currency:'USD'}, action: TotalSpentAction) => {
-  switch(action.type) {
+export const totalSpent = (
+  state: Amount = initialState,
+  action: TotalSpentAction
+) => {
+  switch (action.type) {
     case 'SET_TOTAL_SPENT':
       return action.totalSpent;
     default:
       return state;
-
   }
-}
+};

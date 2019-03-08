@@ -1,54 +1,12 @@
-//--------------
-// TS Interfaces
-//--------------
-
-export interface LanguageAction {
-  type: string;
-  language: string;
-}
-
-export interface CurrencyAction {
-  type: string;
-  currency: string;
-}
-export interface AmountCurrency {
-  currency: string;
-  amount: number;
-}
-
-export interface BudgetAction {
-  type: string;
-  budget: AmountCurrency;
-}
-
-export interface TotalSpentAction {
-  type: string;
-  totalSpent: AmountCurrency;
-}
-
-export interface Expense {
-  id: string;
-  amount: {value: number, currency: string};
-  date: Date;
-  merchant: string;
-  receipts: string[];
-  comment: string;
-  category: string;
-  user: {first: string, email: string, last: string};
-  index: number;
-}
-
-export interface FilterOptions {
-  startDate: {isOn: boolean, value: Date};
-  endDate: {isOn: boolean, value: Date};
-  currency: {isOn: boolean, value: string};
-  minAmount: {isOn: boolean, value: number};
-  maxAmount: {isOn: boolean, value: number};
-}
-
-//--------------
-// Redux Actions
-//--------------
+import {
+  Amount,
+  Expense,
+  FilterOptions,
+  LanguageAction,
+  CurrencyAction,
+  BudgetAction,
+  TotalSpentAction,
+} from '../types';
 
 // `lang` could be 'EN', 'ES', etc
 export const setLanguage = (language: string): LanguageAction => ({
@@ -62,14 +20,12 @@ export const setCurrency = (currency: string): CurrencyAction => ({
   currency,
 });
 
-export const setBudget = (budget: AmountCurrency): BudgetAction => ({
+export const setBudget = (budget: Amount): BudgetAction => ({
   type: 'SET_BUDGET',
   budget,
 });
 
-export const setTotalSpent = (
-  totalSpent: AmountCurrency
-): TotalSpentAction => ({
+export const setTotalSpent = (totalSpent: Amount): TotalSpentAction => ({
   type: 'SET_TOTAL_SPENT',
   totalSpent,
 });

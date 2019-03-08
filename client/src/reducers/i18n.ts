@@ -1,7 +1,5 @@
 import { combineReducers } from 'redux';
-
-// TS Interface imports
-import { LanguageAction, CurrencyAction } from '../actions';
+import { LanguageAction, CurrencyAction } from '../types';
 
 const language = (state = 'EN', action: LanguageAction) => {
   switch (action.type) {

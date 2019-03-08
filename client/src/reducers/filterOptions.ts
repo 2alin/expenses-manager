@@ -1,12 +1,8 @@
-// TS Interface imports;
-import {FilterOptions} from '../actions'
+import {FilterAction, FilterOptions} from '../types'
 
-interface FilterAction {
-  type: string,
-  options: FilterOptions
-}
 
-const initialState = {
+
+const initialState:FilterOptions = {
   startDate: {isOn: false, value: new Date},
   endDate: {isOn: false, value: new Date},
   currency: {isOn: false, value: 'USD'},
@@ -15,7 +11,7 @@ const initialState = {
 }
 
 
-const filterOptions = (state = initialState, action:FilterAction) => {
+const filterOptions = (state:FilterOptions = initialState, action:FilterAction) => {
   switch(action.type) {
     case 'SET_EXPENSES_FILTER':
       return action.options;

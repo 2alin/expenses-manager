@@ -1,14 +1,11 @@
-const initialState = {
+import { Expenses } from '../types';
+
+const initialState: Expenses = {
   list: [],
   total: 0,
 };
 
-interface State {
-  list: any[];
-  total: number;
-}
-
-const expenses = (state: State = initialState, action: any) => {
+const expenses = (state: Expenses = initialState, action: any) => {
   switch (action.type) {
     case 'SET_EXPENSES_LIST':
       return {
