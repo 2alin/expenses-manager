@@ -3,11 +3,13 @@ import Link from './Link'
 import styles from './Link.module.scss';
 
 interface Props {
-  text: string;
+  lang: string;
+  curr: string
   onClick: () => void;
 }
 
-function I18nLink({ text, onClick }: Props) {
+function I18nLink({ lang, curr, onClick }: Props) {
+  const text = lang + ' / ' + curr;
   return <Link {...{text, onClick}} className={styles.link} />;
 }
 

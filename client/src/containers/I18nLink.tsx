@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
-import {Store} from '../types'
+import { Store } from '../types';
 import I18nLink from '../components/I18nLink';
 import { setVisibleOptions } from '../actions';
 
-const mapStateToProps = (state: Store) => ({ text: state.i18n.language });
+const mapStateToProps = (state: Store) => ({
+  lang: state.i18n.language,
+  curr: state.i18n.currency,
+});
 
 const mapDispatchToProps = (dispatch: any) => ({
   onClick: () => {
     console.log('clicked language');
-    return dispatch(setVisibleOptions(true,'I18N'))
+    return dispatch(setVisibleOptions(true, 'I18N'));
   },
 });
 
