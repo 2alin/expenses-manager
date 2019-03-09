@@ -29,11 +29,11 @@ function FilterFormOptionDate({
       <label htmlFor={optionName + 'Check'}>{text}</label>
       <input
         disabled={!filterOption.isOn}
-        type="date"
+        type="number"
         name={optionName}
         id={optionName}
         onChange={e => handleChange(e)}
-        value={toYYMMDD(filterOption.value as Date)}
+        value={filterOption.value as number}
       />
     </div>
   );
