@@ -38,6 +38,7 @@ export interface Expenses {
 export interface FilterOption {
   isOn: boolean;
   value: string | Date | number;
+  [propName: string]: any; //index signature
 }
 
 export interface FilterOptions {
@@ -46,6 +47,7 @@ export interface FilterOptions {
   currency: FilterOption;
   minAmount: FilterOption;
   maxAmount: FilterOption;
+  [propName: string]: FilterOption; // index signature
 }
 
 export interface OptionsContainer {
@@ -86,8 +88,8 @@ export interface TotalSpentAction {
   totalSpent: Amount;
 }
 
-export interface VisibleOptionsAction{
-  type:string;
+export interface VisibleOptionsAction {
+  type: string;
   displayed: boolean;
   optionsToShow: string;
 }

@@ -11,7 +11,7 @@ function App({ trans }: any) {
         <TopBar titleText={trans.title}/>
         <History trans={trans.history}/>
         {/* container to display options for language, currency and expenses list filter */}
-        <OptionsDisplayed />
+        <OptionsDisplayed/>
       </div>
     </React.Fragment>
   );

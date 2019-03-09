@@ -1,6 +1,8 @@
+import filterOptions from "../reducers/filterOptions";
+
 // for index signature purposes
 interface Trans {
-  [prop: string]: object;
+  [prop: string]: any;
 }
 
 export const trans: Trans = {
@@ -9,6 +11,14 @@ export const trans: Trans = {
     history: {
       title: 'History',
       filter: 'Filter',
+      filterOptions: {
+        startDate: 'Start Date',
+        endDate: 'End Date',
+        minAmount:'Minimum Amount',
+        maxAmount: 'Maximum Amount',
+        currency: 'Currency',
+        filter: 'Filtrar'
+      }
     }
   },
   ES: {
@@ -16,6 +26,14 @@ export const trans: Trans = {
     history: {
       title: 'Historial',
       filter: 'Filtrar',
+      filterOptions: {
+        startDate: 'Fecha Inicial',
+        endDate: 'Fecha Final',
+        minAmount:'Cantidad Mínima',
+        maxAmount: 'Cantidad Máxima',
+        currency: 'Moneda',
+        filter:'Filtrar'
+      }
     }
   },
 };

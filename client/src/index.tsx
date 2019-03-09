@@ -2,9 +2,9 @@ import * as serviceWorker from './serviceWorker';
 import './index.scss'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from './containers/AppContainer'
+import App from './containers/App'
 import { createStore } from 'redux';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import {
   setLanguage,
@@ -66,7 +66,7 @@ const store = createStore(rootReducer, composeWithDevTools())
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppContainer />
+    <App />
   </Provider>,
   document.getElementById('root')
 );

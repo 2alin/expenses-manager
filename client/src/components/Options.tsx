@@ -1,6 +1,7 @@
 import React from 'react';
 import LanguageList from '../containers/LanguageList';
 import CurrencyList from '../containers/CurrencyList';
+import FilterForm from '../containers/FilterForm'
 import styles from './Options.module.scss';
 import joinClasses from '../utilities/joinClasses';
 
@@ -30,7 +31,7 @@ export default function Options({
         </React.Fragment>
       )}
       {optionsToShow === 'FILTER_LIST' && (
-        <div>Here we will have filter options</div>
+        <FilterForm/>
       )}
       </div>
     </div>

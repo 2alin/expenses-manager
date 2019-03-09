@@ -1,12 +1,12 @@
 import React from 'react'
-import FilterLinkContainer from '../containers/FilterLinkContainer';
+import FilterLink from '../containers/FilterLink';
 
 function History({trans}:any) {
   return (
     <div>
       <div>
         <span>{trans.title}</span>
-        <FilterLinkContainer text={trans.filter}/>
+        <FilterLink text={trans.filter}/>
       </div>
     </div>
   )
