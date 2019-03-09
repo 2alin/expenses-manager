@@ -1,10 +1,11 @@
 import React from 'react';
 import TopBar from './TopBar';
-import History from './History';
+import History from '../containers/History';
 import OptionsDisplayed from '../containers/OptionsDisplayed';
 import styles from './App.module.scss';
 
 function App({ trans }: any) {
+  console.log(trans.history);
   return (
     <React.Fragment>
       <div className={styles.app}>

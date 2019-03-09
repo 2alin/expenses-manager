@@ -1,34 +1,62 @@
 import { Expenses } from '../types';
 
 const initialState: Expenses = {
-  list: [],
+  completeList: [],
   total: 0,
+  filtered: {
+    list: [],
+    total: 0,
+    page: 1,
+    itemsPerPage: 10,
+  },
 };
 
 const expenses = (state: Expenses = initialState, action: any) => {
+  const {total:filteredTotal, page, itemsPerPage} = state.filtered;
   switch (action.type) {
     case 'SET_EXPENSES_LIST':
       return {
-        list: action.expensesList,
+        completeList: action.expensesList,
         total: action.expensesList.length,
+        filtered: {
+          ...state.filtered,
+          list: action.expensesList,
+          total: action.expensesList.length,
+        },
       };
     case 'ADD_COMMENT':
       return {
-        list: state.list.map(expense =>
+        ...state,
+        completeList: state.completeList.map(expense =>
           expense.id === action.id
             ? { ...expense, comment: action.comment }
             : expense
         ),
-        total: state.total,
       };
     case 'ADD_RECEIPT':
       return {
-        list: state.list.map(expense =>
+        ...state,
+        completeList: state.completeList.map(expense =>
           expense.id === action.id
             ? { ...expense, receipts: [...expense.receipts, action.receipt] }
             : expense
         ),
-        total: state.total,
+      };
+    case 'GO_PREV_PAGE':
+      return {
+        ...state,
+        filtered: {
+          ...state.filtered,
+          page: page > 1 ? page - 1 : 1,
+        },
+      };
+    case 'GO_NEXT_PAGE':
+      return {
+        ...state,
+        filtered: {
+          ...state.filtered,
+          page: (page*itemsPerPage) < filteredTotal ? page + 1 : page,
+        },
       };
     default:
       return state;

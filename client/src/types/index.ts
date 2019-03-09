@@ -30,9 +30,17 @@ export interface Expense {
   index: number;
 }
 
-export interface Expenses {
-  list: Array<Expense>;
+export interface Filtered {
+  list: Array<Expenses>;
   total: number;
+  page: number;
+  itemsPerPage: number;
+}
+
+export interface Expenses {
+  completeList: Array<Expense>;
+  total: number;
+  filtered: Filtered;
 }
 
 export interface FilterOption {
@@ -93,23 +101,6 @@ export interface VisibleOptionsAction {
   displayed: boolean;
   optionsToShow: string;
 }
-
-// export interface ExpensesListAction {
-//   type: string;
-//   expensesList: Array<Expense>;
-// }
-
-// export interface CommentAction {
-//   type: string;
-//   id: number;
-//   comment: string;
-// }
-
-// export interface ReceiptAction {
-//   type: string;
-//   id: number;
-//   receipt: string;
-// }
 
 export interface FilterAction {
   type: string;
