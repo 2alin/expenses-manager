@@ -16,7 +16,7 @@ export const trans: Trans = {
         endDate: 'End Date',
         minAmount:'Minimum Amount',
         maxAmount: 'Maximum Amount',
-        currency: 'Currency',
+        currency: 'Currency Used',
         filter: 'Filtrar'
       }
     }
@@ -31,7 +31,7 @@ export const trans: Trans = {
         endDate: 'Fecha Final',
         minAmount:'Cantidad Mínima',
         maxAmount: 'Cantidad Máxima',
-        currency: 'Moneda',
+        currency: 'Moneda Utilizada',
         filter:'Filtrar'
       }
     }

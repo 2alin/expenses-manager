@@ -1,6 +1,7 @@
 import React from 'react';
 import FilterFormOptionDate from './FilterFormOptionDate';
 import FilterFormOptionAmount from './FilterFormOptionAmount';
+import FilterFormOptionSelect from './FilterFormOptionSelect';
 import { Store, FilterOptions } from '../types';
 
 const testOptions = {
@@ -72,6 +73,12 @@ class FilterForm extends React.Component<Props> {
         <FilterFormOptionAmount text={trans.maxAmount}
           optionName={'maxAmount'}
           filterOption={this.state.maxAmount}
+          handleCheck={this.handleCheck}
+          handleChange={this.handleChange}
+        />
+        <FilterFormOptionSelect text={trans.currency}
+          optionName={'currency'}
+          filterOption={this.state.currency}
           handleCheck={this.handleCheck}
           handleChange={this.handleChange}
         />
