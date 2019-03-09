@@ -7,7 +7,7 @@ interface Props {
 }
 
 function Link({ text, onClick, className='' }: Props) {
-  return <div onClick={onClick} className={className}>{text}</div>;
+  return <button onClick={onClick} className={className}>{text}</button>;
 }
 
 export default Link;

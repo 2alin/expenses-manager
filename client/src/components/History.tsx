@@ -30,6 +30,7 @@ class History extends React.Component<Props> {
     } = this.props.filtered;
 
     const itemsToDisplay = filteredList.slice((page - 1) * 10, page * 10);
+    console.log(filteredList);
 
     return (
       <div>
@@ -41,6 +42,7 @@ class History extends React.Component<Props> {
           <div className="list">
             {itemsToDisplay.map(item => (
               <div>{item.user.first + ' ' + item.user.last}</div>
+              // <div>{item.amount.currency}</div>
             ))}
           </div>
         ) : (

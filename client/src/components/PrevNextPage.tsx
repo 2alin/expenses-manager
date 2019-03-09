@@ -7,9 +7,9 @@ interface Props {
 
 function PrevNextPage({text, onClick}:Props) {
   return (
-    <span onClick={onClick}>
+    <button onClick={onClick}>
       {text}
-    </span>
+    </button>
   )
 }
 
