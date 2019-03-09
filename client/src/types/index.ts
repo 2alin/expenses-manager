@@ -31,7 +31,7 @@ export interface Expense {
 }
 
 export interface Filtered {
-  list: Array<Expenses>;
+  list: Array<Expense>;
   total: number;
   page: number;
   itemsPerPage: number;

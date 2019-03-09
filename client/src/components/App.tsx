@@ -9,10 +9,13 @@ function App({ trans }: any) {
   return (
     <React.Fragment>
       <div className={styles.app}>
-        <TopBar titleText={trans.title}/>
-        <History trans={trans.history}/>
+        <TopBar titleText={trans.title} />
+        <div className={styles.body}>
+          <History trans={trans.history} />
+          <div />
+        </div>
         {/* container to display options for language, currency and expenses list filter */}
-        <OptionsDisplayed/>
+        <OptionsDisplayed />
       </div>
     </React.Fragment>
   );

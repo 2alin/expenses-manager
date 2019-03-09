@@ -52,13 +52,13 @@ export const setExpensesFilter = (options: FilterOptions) => ({
   options,
 });
 
-export const goPrevPage = () => {
+export const goPrevPage = () => ({
   type:'GO_PREV_PAGE'
-}
+})
 
-export const goNextPage = () => {
+export const goNextPage = () => ({
   type: 'GO_NEXT_PAGE'
-}
+})
 
 export const setVisibleOptions = (
   displayed: boolean,

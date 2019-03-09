@@ -4,4 +4,10 @@
   max-width: 800px;
   margin: 0 auto;
   background: $mix-color-light;
+  .body {
+    display: flex;
+    > * {
+      flex: 1;
+    }
+  }
 }

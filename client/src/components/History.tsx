@@ -1,11 +1,13 @@
 import React from 'react';
+import Pagination from './Pagination'
 import FilterLink from '../containers/FilterLink';
 import getAllExpenses from '../utilities/getAllExpenses';
-import { Expense } from '../types';
+import { Filtered, Expense } from '../types';
+import styles from './History.module.scss'
 
 interface Props {
   trans: any;
-  filteredList: Array<Expense>;
+  filtered: Filtered;
   onFetched: (list: Array<Expense>) => void;
 }
 
@@ -20,11 +22,18 @@ class History extends React.Component<Props> {
     });
   }
   render() {
-    const filteredList = this.props.filteredList;
-    const itemsToDisplay = filteredList.slice(0, 10);
+    const {
+      list: filteredList,
+      page,
+      total,
+      itemsPerPage,
+    } = this.props.filtered;
+
+    const itemsToDisplay = filteredList.slice((page - 1) * 10, page * 10);
+
     return (
       <div>
-        <div className="bar">
+        <div className={styles.bar}>
           <span>{this.props.trans.title}</span>
           <FilterLink text={this.props.trans.filter} />
         </div>
@@ -37,6 +46,7 @@ class History extends React.Component<Props> {
         ) : (
           <div className="loading">loading</div>
         )}
+        <Pagination {...{page, total, itemsPerPage}}/>
       </div>
     );
   }
