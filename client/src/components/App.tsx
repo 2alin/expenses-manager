@@ -1,18 +1,17 @@
 import React from 'react';
-import I18nBar from './I18nBar';
-import styles from './App.module.scss';
+import TopBar from './TopBar';
+import History from './History';
 import OptionsDisplayed from '../containers/OptionsDisplayed';
+import styles from './App.module.scss';
 
-function App() {
+function App({ trans }: any) {
   return (
     <React.Fragment>
       <div className={styles.app}>
-        <div className={styles.titleBar}>
-          <span className={styles.title}>Expenses Manager</span>
-          <I18nBar />
-        </div>
+        <TopBar titleText={trans.title}/>
+        <History trans={trans.history}/>
         {/* container to display options for language, currency and expenses list filter */}
-        <OptionsDisplayed/>
+        <OptionsDisplayed />
       </div>
     </React.Fragment>
   );

@@ -1,9 +1,10 @@
 import * as serviceWorker from './serviceWorker';
+import './index.scss'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import AppContainer from './containers/AppContainer'
 import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import rootReducer from './reducers';
 import {
   setLanguage,
@@ -62,9 +63,10 @@ const store = createStore(rootReducer, composeWithDevTools())
 // // Stop listenint to state updates
 // unsubscribe();
 
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('root')
 );

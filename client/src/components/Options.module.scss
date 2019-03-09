@@ -1,5 +1,7 @@
+@import '../styles/index.scss';
+
 .container {
-  background: lightblue;
+  background: $semi-transparent-bg;
   display: none;
   position: fixed;
   top: 0;
@@ -7,17 +9,17 @@
   width: 100vw;
   height: 100vh;
   &.displayed {
-    display: block;
-    background: pink;
+    display: flex;
+    align-items: center;
   }
 }
 .main {
   position: relative;
-  max-width: 800px;
+  max-width: 600px;
   height: 100%;
-  max-height: 400px;
+  max-height: 200px;
   margin: 0 auto;
-  background: lightblue;
+  background: white;
   .exit {
     position: absolute;
     top:0;

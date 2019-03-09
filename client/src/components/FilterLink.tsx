@@ -7,8 +7,8 @@ interface Props {
   onClick: () => void;
 }
 
-function I18nLink({ text, onClick }: Props) {
+function FilterLink({ text, onClick }: Props) {
   return <Link {...{text, onClick}} className={styles.link} />;
 }
 
-export default I18nLink;
+export default FilterLink;
