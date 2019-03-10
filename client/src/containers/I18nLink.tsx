@@ -10,7 +10,6 @@ const mapStateToProps = (state: Store) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   onClick: () => {
-    console.log('clicked language');
     return dispatch(setVisibleOptions(true, 'I18N'));
   },
 });

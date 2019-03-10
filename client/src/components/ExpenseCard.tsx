@@ -11,7 +11,6 @@ function ExpenseCard({ expense, currency }: Props) {
   const { merchant, amount, user, comment } = expense;
   const name = user.first + ' ' + user.last;
   const date = toYYMMDD(new Date(expense.date));
-  console.log(amount, currency);
   const altAmount = convertCurrency(amount, currency);
   const amountText = `${amount.value} ${
     amount.currency

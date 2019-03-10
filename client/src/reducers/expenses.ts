@@ -26,7 +26,6 @@ const expenses = (state: Expenses = initialState, action: any) => {
         },
       };
     case 'FILTER_EXPENSES_LIST':
-      console.log('filtered');
       const filteredList = filterExpenses(
         state.completeList,
         action.options,

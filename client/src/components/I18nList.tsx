@@ -8,8 +8,6 @@ interface Props {
 }
 
 function I18nLink({ list, active, onClick }: Props) {
-  console.log('active');
-  console.log(active);
   return (
     <ul className = {styles.list}>
       {list.map(lang => (

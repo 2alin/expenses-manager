@@ -76,6 +76,6 @@ export const filterExpenses = (
       expense => options.currency.value === expense.amount.currency
     );
   }
-  console.log("filteredlist",filteredList);
+
   return filteredList;
 };

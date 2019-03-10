@@ -19,7 +19,6 @@ const mapDispatchToProps = (dispatch: any) => ({
     dispatch(setExpensesFilter(options));
     dispatch(filterExpensesList(options, currency));
     dispatch(setVisibleOptions(false, 'NONE'));
-    console.log("currency", currency);
   },
 });
 

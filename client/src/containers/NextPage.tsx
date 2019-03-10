@@ -6,7 +6,6 @@ import {Store} from '../types'
 
 const mapDispatchToProps = (dispatch: any) => ({
   onClick: () => {
-    console.log('clicked');
     return dispatch(goNextPage());
   },
 });

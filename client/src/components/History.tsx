@@ -61,24 +61,4 @@ class History extends React.Component<Props> {
   }
 }
 
-function History2({ trans }: any) {
-  const listPromise = getAllExpenses();
-  let completeList;
-  listPromise.then(res => {
-    console.log(res);
-    completeList = res;
-  });
-  return (
-    <div>
-      <div>
-        <div className="bar">
-          <span>{trans.title}</span>
-          <FilterLink text={trans.filter} />
-        </div>
-        <div className="list" />
-      </div>
-    </div>
-  );
-}
-
 export default History;
