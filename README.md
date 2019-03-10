@@ -1,3 +1,8 @@
+
+Solution by Adilson Sandoval, still work in progress, please wait to be finished.
+
+---
+
 # Front-end challenge
 Implement an expenses list fetching all expenses from the provided API. Allow the user to add notes and upload receipt pictures to each expense.
 
