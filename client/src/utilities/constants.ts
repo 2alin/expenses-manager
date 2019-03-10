@@ -1,3 +1,5 @@
+export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+
 export const BUDGET = {
   curr: 'USD',
   amount: 20000,
@@ -8,20 +10,19 @@ interface Languages {
   [index: string]: string;
 }
 interface ExRates {
-  rates: {[index: string]: number};
+  rates: { [index: string]: number };
   base: string;
-  date: string
+  date: string;
 }
 
-
-export const LANGUAGES:Languages = {
+export const LANGUAGES: Languages = {
   ES: 'spanish',
   EN: 'english',
 };
 
 // for testing purposes only USD base and a past date is considered
 // but an external api can be used for a future deployment
-export const EXRATES:ExRates = {
+export const EXRATES: ExRates = {
   rates: {
     MXN: 19.2834144184,
     AUD: 1.4216718266,

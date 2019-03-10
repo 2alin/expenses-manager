@@ -1,15 +1,16 @@
 import axios from 'axios';
+import {API_URL} from './constants'
 
 export function getAllExpenses() {
   let expensesList = [];
 
   return axios
-    .get('http://localhost:3000/expenses')
+    .get(API_URL + '/expenses')
     .then(res => {
       // get the number of expenses
       const numberExpenses = res.data.total;
       // fetch all expenses list
-      return axios.get('http://localhost:3000/expenses', {
+      return axios.get(API_URL + '/expenses', {
         params: { limit: numberExpenses, offset: 0 },
       });
     })
@@ -27,7 +28,7 @@ export function getAllExpenses() {
 
 export function uploadComment(id: string, comment: string) {
   return axios
-    .post(`http://localhost:3000/expenses/${id}`, { comment: comment })
+    .post(API_URL + '/expenses/' + id, { comment: comment })
     .then((res) => {
       console.log('success updating comment')
       return res.data;
