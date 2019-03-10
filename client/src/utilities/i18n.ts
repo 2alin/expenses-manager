@@ -22,6 +22,11 @@ export const trans: Trans = {
         addReceipt: 'Add Receipt',
         submit: 'Submit',
       },
+      receiptForm: {
+        title: '',
+        descripttion: '',
+        submit: 'Submit',
+      }
     },
   },
   ES: {
@@ -42,6 +47,11 @@ export const trans: Trans = {
         addReceipt: 'Agregar Recibo',
         submit: 'Aceptar',
       },
+      receiptForm: {
+        title: '',
+        descripttion: '',
+        submit: 'Aceptar',
+      }
     },
   },
 };

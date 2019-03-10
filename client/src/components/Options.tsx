@@ -3,6 +3,7 @@ import LanguageList from '../containers/LanguageList';
 import CurrencyList from '../containers/CurrencyList';
 import FilterForm from '../containers/FilterForm';
 import AddCommentForm from '../containers/AddCommentForm';
+import AddReceiptForm from '../containers/AddReceiptForm';
 import styles from './Options.module.scss';
 
 interface Props {
@@ -32,6 +33,7 @@ export default function Options({
         )}
         {optionsToShow === 'FILTER_LIST' && <FilterForm />}
         {optionsToShow === 'COMMENT' && <AddCommentForm />}
+        {optionsToShow === 'RECEIPT' && <AddReceiptForm />}
       </div>
     </div>
   );

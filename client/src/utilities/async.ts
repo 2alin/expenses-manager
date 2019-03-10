@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {API_URL} from './constants'
+import { API_URL } from './constants';
 
 export function getAllExpenses() {
   let expensesList = [];
@@ -15,7 +15,7 @@ export function getAllExpenses() {
       });
     })
     .then(res => {
-      console.log('success fetching complete expenses list')
+      console.log('success fetching complete expenses list');
       // get the complete list of expenses
       expensesList = res.data.expenses;
       return expensesList;
@@ -29,12 +29,32 @@ export function getAllExpenses() {
 export function uploadComment(id: string, comment: string) {
   return axios
     .post(API_URL + '/expenses/' + id, { comment: comment })
-    .then((res) => {
-      console.log('success updating comment')
+    .then(res => {
+      console.log('success updating comment');
       return res.data;
     })
     .catch(err => {
       console.log('there was an error while updating expense');
+      console.log(err);
+    });
+}
+
+export function uploadReceipt(id: string, data: any) {
+  console.log('inside uploadReceipt');
+  console.log('data:', data);
+  console.log('get all:', data.getAll('file'));
+  return axios
+    .post(API_URL + '/expenses/' + id + '/receipts', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+    .then(res => {
+      console.log('success uploading receipt');
+      return res.data;
+    })
+    .catch(err => {
+      console.log('there was an error while uploading receipt');
       console.log(err);
     });
 }
