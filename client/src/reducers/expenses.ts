@@ -48,6 +48,14 @@ const expenses = (state: Expenses = initialState, action: any) => {
             ? { ...expense, comment: action.comment }
             : expense
         ),
+        filtered: {
+          ...state.filtered,
+          list: state.filtered.list.map(expense =>
+            expense.id === action.id
+              ? { ...expense, comment: action.comment }
+              : expense
+          ),
+        },
       };
     case 'ADD_RECEIPT':
       return {
