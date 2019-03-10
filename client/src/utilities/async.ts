@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-function getAllExpenses() {
+export function getAllExpenses() {
   let expensesList = [];
 
   return axios
@@ -14,6 +14,7 @@ function getAllExpenses() {
       });
     })
     .then(res => {
+      console.log('success fetching complete expenses list')
       // get the complete list of expenses
       expensesList = res.data.expenses;
       return expensesList;
@@ -22,6 +23,17 @@ function getAllExpenses() {
       console.log('there was an error while fetching');
       console.log(err);
     });
-};
+}
 
-export default getAllExpenses;
+export function uploadComment(id: string, comment: string) {
+  return axios
+    .post(`http://localhost:3000/expenses/${id}`, { comment: comment })
+    .then((res) => {
+      console.log('success updating comment')
+      return res.data;
+    })
+    .catch(err => {
+      console.log('there was an error while updating expense');
+      console.log(err);
+    });
+}

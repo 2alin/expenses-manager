@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import AddCommentForm from '../components/AddCommentForm';
-import { addComment, setVisibleOptions } from '../actions';
-import { Store } from '../types';
+import { setVisibleOptions, updateExpense} from '../actions';
+import {uploadComment} from '../utilities/async'
+import { Store, Expense } from '../types';
 
 const mapStateToProps = (state: Store, ownProps: any) => ({
   id: state.commentToUpdate.id,
@@ -10,9 +11,10 @@ const mapStateToProps = (state: Store, ownProps: any) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   onSubmit: (id: string, comment: string) => {
-    console.log('id',id);
-    console.log('comment',comment);
-    dispatch(addComment(id, comment));
+    console.log('comment', comment);
+    uploadComment(id, comment).then((res) => {
+      dispatch(updateExpense(res));
+    })
     dispatch(setVisibleOptions(false, 'NONE'));
   },
 });

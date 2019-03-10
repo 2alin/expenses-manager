@@ -2,7 +2,7 @@ import React from 'react';
 import Pagination from './Pagination';
 import ExpenseCard from './ExpenseCard';
 import FilterLink from '../containers/FilterLink';
-import getAllExpenses from '../utilities/getAllExpenses';
+import {getAllExpenses} from '../utilities/async';
 import { Filtered, Expense } from '../types';
 import styles from './History.module.scss';
 

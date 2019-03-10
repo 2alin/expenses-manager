@@ -45,11 +45,10 @@ export const filterExpensesList = (
   currency,
 });
 
-export const addComment = (id: string, comment: string) => ({
-  type: 'ADD_COMMENT',
-  id,
-  comment,
-});
+export const updateExpense = (expense:Expense) => ({
+  type: 'UPDATE_EXPENSE',
+  expense
+})
 
 export const addReceipt = (id: string, receipt: string) => ({
   type: 'ADD_RECEIPT',

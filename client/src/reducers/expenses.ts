@@ -40,19 +40,19 @@ const expenses = (state: Expenses = initialState, action: any) => {
           itemsPerPage: initialState.filtered.itemsPerPage,
         },
       };
-    case 'ADD_COMMENT':
+    case 'UPDATE_EXPENSE':
       return {
         ...state,
         completeList: state.completeList.map(expense =>
-          expense.id === action.id
-            ? { ...expense, comment: action.comment }
+          expense.id === action.expense.id
+            ? { ...expense, comment: action.expense.comment }
             : expense
         ),
         filtered: {
           ...state.filtered,
           list: state.filtered.list.map(expense =>
-            expense.id === action.id
-              ? { ...expense, comment: action.comment }
+            expense.id === action.expense.id
+              ? { ...expense, comment: action.expense.comment }
               : expense
           ),
         },
