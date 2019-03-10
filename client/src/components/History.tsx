@@ -1,15 +1,16 @@
 import React from 'react';
-import Pagination from './Pagination'
-import ExpenseCard from './ExpenseCard'
+import Pagination from './Pagination';
+import ExpenseCard from './ExpenseCard';
 import FilterLink from '../containers/FilterLink';
 import getAllExpenses from '../utilities/getAllExpenses';
 import { Filtered, Expense } from '../types';
-import styles from './History.module.scss'
+import styles from './History.module.scss';
 
 interface Props {
   trans: any;
   filtered: Filtered;
   currency: string;
+  hadFiltered: boolean;
   onFetched: (list: Array<Expense>) => void;
 }
 
@@ -30,14 +31,18 @@ class History extends React.Component<Props> {
       total,
       itemsPerPage,
     } = this.props.filtered;
-    const currency = this.props.currency;
+    const { currency, hadFiltered } = this.props;
     const itemsToDisplay = filteredList.slice((page - 1) * 10, page * 10);
 
     return (
       <div className={styles.container}>
         <div className={styles.bar}>
           <span>{this.props.trans.title}</span>
-          <FilterLink text={this.props.trans.filter} />
+          <div>
+            { hadFiltered &&
+            <span className={styles.filterDone}>Done!</span>}
+            <FilterLink text={this.props.trans.filter} />
+          </div>
         </div>
         {filteredList.length > 0 ? (
           <div className={styles.list}>
@@ -50,7 +55,7 @@ class History extends React.Component<Props> {
         ) : (
           <div className="emptyList">Nothing to show :(</div>
         )}
-        <Pagination {...{page, total, itemsPerPage}}/>
+        <Pagination {...{ page, total, itemsPerPage }} />
       </div>
     );
   }
