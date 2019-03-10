@@ -1,17 +1,18 @@
-import React from 'react'
+import React from 'react';
 
 interface Props {
+  buttonText: string;
   id: string;
   comment: string;
-  onClick: (id:string, comment:string) => void;
+  onClick: (id: string, comment: string) => void;
 }
 
-function AddCommentButton({id,comment, onClick}:Props) {
+function AddCommentButton({ buttonText, id, comment, onClick }: Props) {
   return (
     <div onClick={() => onClick(id, comment)}>
-      <button>ADD COMMENT</button>
+      <button>{buttonText}</button>
     </div>
-  )
+  );
 }
 
-export default AddCommentButton
+export default AddCommentButton;

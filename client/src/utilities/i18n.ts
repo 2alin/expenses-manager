@@ -1,7 +1,5 @@
-import filterOptions from "../reducers/filterOptions";
-
 // for index signature purposes
-interface Trans {
+export interface Trans {
   [prop: string]: any;
 }
 
@@ -14,12 +12,17 @@ export const trans: Trans = {
       filterOptions: {
         startDate: 'Start Date',
         endDate: 'End Date',
-        minAmount:'Minimum Amount',
+        minAmount: 'Minimum Amount',
         maxAmount: 'Maximum Amount',
         currency: 'Currency Used',
-        filter: 'Filtrar'
-      }
-    }
+        filter: 'Filtrar',
+      },
+      expense: {
+        addComment: 'Add Comment',
+        addReceipt: 'Add Receipt',
+        submit: 'Submit',
+      },
+    },
   },
   ES: {
     title: 'Administrador de Gastos',
@@ -29,11 +32,16 @@ export const trans: Trans = {
       filterOptions: {
         startDate: 'Fecha Inicial',
         endDate: 'Fecha Final',
-        minAmount:'Cantidad Mínima',
+        minAmount: 'Cantidad Mínima',
         maxAmount: 'Cantidad Máxima',
         currency: 'Moneda Utilizada',
-        filter:'Filtrar'
-      }
-    }
+        filter: 'Filtrar',
+      },
+      expense: {
+        addComment: 'Agregar Comentario',
+        addReceipt: 'Agregar Recibo',
+        submit: 'Aceptar',
+      },
+    },
   },
 };

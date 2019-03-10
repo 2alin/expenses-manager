@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface Props {
+  buttonText: string,
   id: string;
   comment: string;
   onSubmit: (id: string, comment: string) => void;
@@ -35,7 +36,7 @@ class AddCommentForm extends React.Component<Props> {
           onChange={this.handleChange}
           value={this.state.comment}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">{this.props.buttonText}</button>
       </form>
     );
   }
