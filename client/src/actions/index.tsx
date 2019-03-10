@@ -78,8 +78,8 @@ export const setVisibleOptions = (
   optionsToShow,
 });
 
-export const setCommentToUpdate = (id:string, comment: string) => ({
-  type: 'SET_COMMENT_TO_UPDATE',
+export const setExpenseToUpdate = (id:string, comment: string) => ({
+  type: 'SET_EXPENSE_TO_UPDATE',
   id,
   comment,
 })

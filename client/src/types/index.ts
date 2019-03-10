@@ -63,7 +63,7 @@ export interface OptionsContainer {
   optionsToShow: string;
 }
 
-export interface CommentToUpdate {
+export interface ExpenseToUpdate {
   id: string,
   comment: string,
 }
@@ -75,7 +75,7 @@ export interface Store {
   expenses: Expenses;
   filterOptions: FilterOptions;
   optionsContainer: OptionsContainer;
-  commentToUpdate: CommentToUpdate;
+  expenseToUpdate: ExpenseToUpdate;
 }
 
 //-------------------
@@ -108,7 +108,7 @@ export interface VisibleOptionsAction {
   optionsToShow: string;
 }
 
-export interface CommentToUpdateAction {
+export interface ExpenseToUpdateAction {
   type: string,
   id: string,
   comment: string

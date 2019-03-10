@@ -7,8 +7,8 @@ import { Store, Expense } from '../types';
 
 const mapStateToProps = (state: Store, ownProps: any) => ({
   buttonText: trans[state.i18n.language].history.expense.submit,
-  id: state.commentToUpdate.id,
-  comment: state.commentToUpdate.comment,
+  id: state.expenseToUpdate.id,
+  comment: state.expenseToUpdate.comment,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({

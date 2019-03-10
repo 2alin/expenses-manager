@@ -7,7 +7,7 @@ import { Store, Expense } from '../types';
 
 const mapStateToProps = (state: Store, ownProps: any) => ({
   trans: trans[state.i18n.language].history.receiptForm,
-  id: state.commentToUpdate.id,
+  id: state.expenseToUpdate.id,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({

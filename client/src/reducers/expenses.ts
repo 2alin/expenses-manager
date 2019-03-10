@@ -45,26 +45,17 @@ const expenses = (state: Expenses = initialState, action: any) => {
         ...state,
         completeList: state.completeList.map(expense =>
           expense.id === action.expense.id
-            ? { ...expense, comment: action.expense.comment }
+            ? { ...action.expense}
             : expense
         ),
         filtered: {
           ...state.filtered,
           list: state.filtered.list.map(expense =>
             expense.id === action.expense.id
-              ? { ...expense, comment: action.expense.comment }
+              ? { ...action.expense}
               : expense
           ),
         },
-      };
-    case 'ADD_RECEIPT':
-      return {
-        ...state,
-        completeList: state.completeList.map(expense =>
-          expense.id === action.id
-            ? { ...expense, receipts: [...expense.receipts, action.receipt] }
-            : expense
-        ),
       };
     case 'GO_PREV_PAGE':
       return {
