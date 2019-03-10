@@ -1,4 +1,5 @@
 import { Expenses } from '../types';
+import { filterExpenses } from '../utilities/methods';
 
 const initialState: Expenses = {
   completeList: [],
@@ -22,6 +23,22 @@ const expenses = (state: Expenses = initialState, action: any) => {
           ...state.filtered,
           list: action.expensesList || [],
           total: action.expensesList ? action.expensesList.length : 0,
+        },
+      };
+    case 'FILTER_EXPENSES_LIST':
+      console.log('filtered');
+      const filteredList = filterExpenses(
+        state.completeList,
+        action.options,
+        action.currency
+      );
+      return {
+        ...state,
+        filtered: {
+          list: filteredList,
+          total: filteredList.length,
+          page: initialState.filtered.page,
+          itemsPerPage: initialState.filtered.itemsPerPage,
         },
       };
     case 'ADD_COMMENT':

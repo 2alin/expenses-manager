@@ -48,7 +48,7 @@ class History extends React.Component<Props> {
             ))}
           </div>
         ) : (
-          <div className="loading">loading</div>
+          <div className="emptyList">Nothing to show :(</div>
         )}
         <Pagination {...{page, total, itemsPerPage}}/>
       </div>

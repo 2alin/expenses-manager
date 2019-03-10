@@ -15,7 +15,8 @@ const testOptions = {
 interface Props {
   trans: any;
   options: FilterOptions;
-  onClick: (options: FilterOptions) => void;
+  currency: string;
+  onClick: (options: FilterOptions, currency:string) => void;
 }
 
 class FilterForm extends React.Component<Props> {
@@ -26,7 +27,6 @@ class FilterForm extends React.Component<Props> {
   }
   handleCheck = (e: any, element: string) => {
     const isOn = e.target.checked;
-    console.log(isOn);
     this.setState({ [element]: { ...this.state[element], isOn } });
   };
   handleDateChange = (e: any) => {
@@ -83,7 +83,7 @@ class FilterForm extends React.Component<Props> {
           handleChange={this.handleChange}
         />
         <div className="row">
-          <button onClick={() => this.props.onClick(this.state)}>{trans.filter}</button>
+          <button onClick={() => this.props.onClick(this.state, this.props.currency)}>{trans.filter}</button>
         </div>
       </form>
     );

@@ -35,6 +35,15 @@ export const setExpensesList = (expensesList: Array<Expense>) => ({
   expensesList,
 });
 
+export const filterExpensesList = (
+  options: FilterOptions,
+  currency: string
+) => ({
+  type:'FILTER_EXPENSES_LIST',
+  options,
+  currency
+});
+
 export const addComment = (id: string, comment: string) => ({
   type: 'ADD_COMMENT',
   id,
@@ -53,12 +62,12 @@ export const setExpensesFilter = (options: FilterOptions) => ({
 });
 
 export const goPrevPage = () => ({
-  type:'GO_PREV_PAGE'
-})
+  type: 'GO_PREV_PAGE',
+});
 
 export const goNextPage = () => ({
-  type: 'GO_NEXT_PAGE'
-})
+  type: 'GO_NEXT_PAGE',
+});
 
 export const setVisibleOptions = (
   displayed: boolean,
@@ -66,5 +75,5 @@ export const setVisibleOptions = (
 ) => ({
   type: 'SET_VISIBLE_OPTIONS',
   displayed,
-  optionsToShow
+  optionsToShow,
 });
