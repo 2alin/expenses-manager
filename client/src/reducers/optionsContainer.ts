@@ -10,7 +10,7 @@ const optionsContainer = (state:OptionsContainer = initialState, action: Visible
     case 'SET_VISIBLE_OPTIONS':
       return {
         displayed: action.displayed,
-        optionsToShow: action.optionsToShow
+        optionsToShow: action.optionsToShow,
       };
     default:
       return state;

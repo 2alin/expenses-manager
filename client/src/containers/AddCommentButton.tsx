@@ -1,0 +1,23 @@
+import { connect } from 'react-redux';
+import AddCommentButton from '../components/AddCommentButton';
+import { setVisibleOptions, setCommentToUpdate } from '../actions';
+import { Store } from '../types';
+
+const mapStateToProps = (state: Store, ownProps: any) => ({
+  id: ownProps.id,
+  comment: ownProps.comment,
+});
+
+const mapDispatchToProps = (dispatch: any) => ({
+  onClick: (id: string, comment: string) => {
+    console.log(id);
+    console.log(comment);
+    dispatch(setCommentToUpdate(id, comment));
+    dispatch(setVisibleOptions(true, 'COMMENT'));
+  },
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddCommentButton);

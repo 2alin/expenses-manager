@@ -1,4 +1,5 @@
 import React from 'react';
+import AddCommentButton from '../containers/AddCommentButton'
 import { Expense, User } from '../types';
 import { toYYMMDD, convertCurrency } from '../utilities/methods';
 import styles from './ExpenseCard.module.scss';
@@ -43,7 +44,7 @@ function ExpenseCard({ expense, currency }: Props) {
       {comment.trim() != '' && <div className={styles.comment}>{comment}</div>}
       {/* FOOTER: includes controls to add comments and receipts*/}
       <div className={styles.footer}>
-        <button>ADD COMMENT</button>
+        <AddCommentButton id={expense.id} comment={expense.comment}/>
         <button>ADD RECEIPT</button>
       </div>
     </div>

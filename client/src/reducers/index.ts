@@ -4,6 +4,7 @@ import { budget, totalSpent } from './finances';
 import expenses from './expenses';
 import filterOptions from './filterOptions';
 import optionsContainer from './optionsContainer';
+import commentToUpdate from './commentToUpdate';
 
 const rootReducer = combineReducers({
   i18n,
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   totalSpent,
   expenses,
   filterOptions,
-  optionsContainer
+  optionsContainer,
+  commentToUpdate
 });
 
 export default rootReducer;

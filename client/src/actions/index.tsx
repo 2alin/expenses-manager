@@ -7,6 +7,7 @@ import {
   BudgetAction,
   TotalSpentAction,
 } from '../types';
+import { string } from 'prop-types';
 
 // `lang` could be 'EN', 'ES', etc
 export const setLanguage = (language: string): LanguageAction => ({
@@ -39,9 +40,9 @@ export const filterExpensesList = (
   options: FilterOptions,
   currency: string
 ) => ({
-  type:'FILTER_EXPENSES_LIST',
+  type: 'FILTER_EXPENSES_LIST',
   options,
-  currency
+  currency,
 });
 
 export const addComment = (id: string, comment: string) => ({
@@ -77,3 +78,9 @@ export const setVisibleOptions = (
   displayed,
   optionsToShow,
 });
+
+export const setCommentToUpdate = (id:string, comment: string) => ({
+  type: 'SET_COMMENT_TO_UPDATE',
+  id,
+  comment,
+})

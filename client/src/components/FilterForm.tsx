@@ -4,13 +4,6 @@ import FilterFormOptionAmount from './FilterFormOptionAmount';
 import FilterFormOptionSelect from './FilterFormOptionSelect';
 import { Store, FilterOptions } from '../types';
 
-const testOptions = {
-  startDate: { isOn: true, value: new Date() },
-  endDate: { isOn: true, value: new Date() },
-  currency: { isOn: false, value: 'EUR' },
-  minAmount: { isOn: true, value: 5000 },
-  maxAmount: { isOn: false, value: 0 },
-};
 
 interface Props {
   trans: any;

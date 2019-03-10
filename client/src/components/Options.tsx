@@ -1,7 +1,8 @@
 import React from 'react';
 import LanguageList from '../containers/LanguageList';
 import CurrencyList from '../containers/CurrencyList';
-import FilterForm from '../containers/FilterForm'
+import FilterForm from '../containers/FilterForm';
+import AddCommentForm from '../containers/AddCommentForm';
 import styles from './Options.module.scss';
 import joinClasses from '../utilities/joinClasses';
 
@@ -23,16 +24,15 @@ export default function Options({
   return (
     <div className={joinClasses(classList)}>
       <div className={styles.main}>
-      <div className={styles.exit} onClick={onExitClick} />
-      {optionsToShow === 'I18N' && (
-        <React.Fragment>
-          <LanguageList />
-          <CurrencyList />
-        </React.Fragment>
-      )}
-      {optionsToShow === 'FILTER_LIST' && (
-        <FilterForm/>
-      )}
+        <div className={styles.exit} onClick={onExitClick} />
+        {optionsToShow === 'I18N' && (
+          <React.Fragment>
+            <LanguageList />
+            <CurrencyList />
+          </React.Fragment>
+        )}
+        {optionsToShow === 'FILTER_LIST' && <FilterForm />}
+        {optionsToShow === 'COMMENT' && <AddCommentForm />}
       </div>
     </div>
   );

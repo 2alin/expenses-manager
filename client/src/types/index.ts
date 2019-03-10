@@ -63,6 +63,11 @@ export interface OptionsContainer {
   optionsToShow: string;
 }
 
+export interface CommentToUpdate {
+  id: string,
+  comment: string,
+}
+
 export interface Store {
   i18n: I18n;
   budget: Budget;
@@ -70,6 +75,7 @@ export interface Store {
   expenses: Expenses;
   filterOptions: FilterOptions;
   optionsContainer: OptionsContainer;
+  commentToUpdate: CommentToUpdate;
 }
 
 //-------------------
@@ -100,6 +106,12 @@ export interface VisibleOptionsAction {
   type: string;
   displayed: boolean;
   optionsToShow: string;
+}
+
+export interface CommentToUpdateAction {
+  type: string,
+  id: string,
+  comment: string
 }
 
 export interface FilterAction {
