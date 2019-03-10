@@ -6,11 +6,11 @@ import { setExpensesList } from '../actions';
 const mapStateToProps = (state: Store, ownProps: any) => ({
   ...ownProps,
   filtered: state.expenses.filtered,
+  currency: state.i18n.currency,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
   onFetched: (list: Array<Expense>) => {
-    console.log('Fetching Expenses List');
     return dispatch(setExpensesList(list));
   },
 });

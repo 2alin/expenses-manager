@@ -1,5 +1,17 @@
-.bar {
+.container {
+  height: 100%;
   display: flex;
-  background: lightblue;
+  flex-direction: column;
   justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+  .bar {
+    display: flex;
+    background: lightblue;
+    justify-content: space-between;
+  }
+  
+  .list {
+    overflow: auto;
+  }
 }

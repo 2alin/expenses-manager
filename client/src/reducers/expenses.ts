@@ -12,16 +12,16 @@ const initialState: Expenses = {
 };
 
 const expenses = (state: Expenses = initialState, action: any) => {
-  const {total:filteredTotal, page, itemsPerPage} = state.filtered;
+  const { total: filteredTotal, page, itemsPerPage } = state.filtered;
   switch (action.type) {
     case 'SET_EXPENSES_LIST':
       return {
-        completeList: action.expensesList,
-        total: action.expensesList.length,
+        completeList: action.expensesList || [],
+        total: action.expensesList ? action.expensesList.length : 0,
         filtered: {
           ...state.filtered,
-          list: action.expensesList,
-          total: action.expensesList.length,
+          list: action.expensesList || [],
+          total: action.expensesList ? action.expensesList.length : 0,
         },
       };
     case 'ADD_COMMENT':
@@ -55,7 +55,7 @@ const expenses = (state: Expenses = initialState, action: any) => {
         ...state,
         filtered: {
           ...state.filtered,
-          page: (page*itemsPerPage) < filteredTotal ? page + 1 : page,
+          page: page * itemsPerPage < filteredTotal ? page + 1 : page,
         },
       };
     default:

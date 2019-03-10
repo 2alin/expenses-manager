@@ -1,5 +1,6 @@
 import React from 'react';
 import Pagination from './Pagination'
+import ExpenseCard from './ExpenseCard'
 import FilterLink from '../containers/FilterLink';
 import getAllExpenses from '../utilities/getAllExpenses';
 import { Filtered, Expense } from '../types';
@@ -8,6 +9,7 @@ import styles from './History.module.scss'
 interface Props {
   trans: any;
   filtered: Filtered;
+  currency: string;
   onFetched: (list: Array<Expense>) => void;
 }
 
@@ -28,20 +30,20 @@ class History extends React.Component<Props> {
       total,
       itemsPerPage,
     } = this.props.filtered;
-
+    const currency = this.props.currency;
     const itemsToDisplay = filteredList.slice((page - 1) * 10, page * 10);
-    console.log(filteredList);
 
     return (
-      <div>
+      <div className={styles.container}>
         <div className={styles.bar}>
           <span>{this.props.trans.title}</span>
           <FilterLink text={this.props.trans.filter} />
         </div>
         {filteredList.length > 0 ? (
-          <div className="list">
+          <div className={styles.list}>
             {itemsToDisplay.map(item => (
-              <div>{item.user.first + ' ' + item.user.last}</div>
+              <ExpenseCard key={item.id} expense={item} currency={currency} />
+              // <div>{item.user.first + ' ' + item.user.last}</div>
               // <div>{item.amount.currency}</div>
             ))}
           </div>

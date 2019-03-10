@@ -1,11 +1,16 @@
 @import '../styles/index.scss';
+$vertical-margin: 0px;
 
 .app {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 960px;
+  height: calc(100vh - 2 * #{$vertical-margin});
+  margin: $vertical-margin auto;
   background: $mix-color-light;
   .body {
     display: flex;
+    background: rgba(0,100,0,0.2);
+    height: calc(100% - #{$top-bar-height});
+    flex: 1;
     > * {
       flex: 1;
     }

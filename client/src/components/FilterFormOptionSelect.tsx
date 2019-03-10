@@ -1,5 +1,4 @@
 import React from 'react';
-import { toYYMMDD } from '../utilities/timeDates';
 import { FilterOption } from '../types';
 import { EXRATES } from '../utilities/constants';
 

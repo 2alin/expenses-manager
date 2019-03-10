@@ -1,4 +1,8 @@
+@import '../styles/index.scss';
+
 .titleBar {
+  height: $top-bar-height;
+  background:lightgray;
   display: flex;
   justify-content: space-between;
 }
