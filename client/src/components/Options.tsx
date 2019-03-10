@@ -4,7 +4,6 @@ import CurrencyList from '../containers/CurrencyList';
 import FilterForm from '../containers/FilterForm';
 import AddCommentForm from '../containers/AddCommentForm';
 import styles from './Options.module.scss';
-import joinClasses from '../utilities/joinClasses';
 
 interface Props {
   displayed: boolean;
@@ -22,7 +21,7 @@ export default function Options({
   if (displayed) classList.push(styles.displayed);
 
   return (
-    <div className={joinClasses(classList)}>
+    <div className={classList.join(' ')}>
       <div className={styles.main}>
         <div className={styles.exit} onClick={onExitClick} />
         {optionsToShow === 'I18N' && (
