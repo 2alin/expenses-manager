@@ -78,7 +78,7 @@ export interface SpentByCurrency {
 export interface Finance {
   budget: Amount;
   totalSpent: Amount;
-  spentByCurrencyDict: SpentByCurrency,
+  spentByCurrency: SpentByCurrency,
   currencySet: string;
 }
 
