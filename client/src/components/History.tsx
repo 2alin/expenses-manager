@@ -50,7 +50,7 @@ class History extends React.Component<Props> {
         ) : (
           <div className="emptyList">Nothing to show :(</div>
         )}
-        <Pagination {...{ page, total, itemsPerPage }} />
+        <Pagination {...{trans:this.props.trans.footer, page, total, itemsPerPage }} />
       </div>
     );
   }

@@ -9,6 +9,10 @@ export const trans: Trans = {
     history: {
       title: 'History',
       filter: 'Filter',
+      footer: {
+        previous: 'Previous',
+        next: 'Next',
+      },
       filterOptions: {
         startDate: 'Start Date',
         endDate: 'End Date',
@@ -28,12 +32,26 @@ export const trans: Trans = {
         submit: 'Submit',
       }
     },
+    charts: {
+      first: {
+        title: 'Total Spent vs Budget Left',
+        spent: 'Spent',
+        left: 'Left',
+      },
+      second: {
+        title: 'Number of Expenses by Currency',
+      }
+    }
   },
   ES: {
     title: 'Administrador de Gastos',
     history: {
       title: 'Historial',
       filter: 'Filtrar',
+      footer: {
+        previous: 'Anterior',
+        next: 'Siguiente',
+      },
       filterOptions: {
         startDate: 'Fecha Inicial',
         endDate: 'Fecha Final',
@@ -53,5 +71,15 @@ export const trans: Trans = {
         submit: 'Aceptar',
       }
     },
+    charts: {
+      first: {
+        title: 'Gasto Total vs Resto de Presupuesto',
+        spent: 'Gasto',
+        left: 'Resto',
+      },
+      second: {
+        title: 'Número de Gastos por Moneda',
+      }
+    }
   },
 };

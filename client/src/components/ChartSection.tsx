@@ -4,6 +4,7 @@ import { Finance } from '../types';
 import styles from './ChartSection.module.scss';
 
 interface Props {
+  trans: any,
   financeData: Finance;
 }
 
@@ -25,15 +26,14 @@ const solidColors = [
   'rgba(255, 159, 64, 1)',
 ];
 
-function ChartSection({ financeData }: Props) {
+function ChartSection({ trans, financeData }: Props) {
   const totalSpent = financeData.totalSpent.value;
   const budgetLeft = financeData.budget.value - financeData.totalSpent.value;
 
   const dataFirstChart = {
-    labels: ['Spent', 'Left'],
+    labels: [trans.first.spent, trans.first.left],
     datasets: [
       {
-        label: 'Total Spent vs Budget Left',
         data: [totalSpent.toFixed(2), budgetLeft.toFixed(2)],
         backgroundColor: [
           'rgba(54, 162, 235, 0.5)',
@@ -54,7 +54,6 @@ function ChartSection({ financeData }: Props) {
     labels: currencies,
     datasets: [
       {
-        label: 'Number of Expenses by Currency',
         data: numberExpenses,
         backgroundColor: transparentColors,
         borderColor: solidColors,
@@ -69,7 +68,7 @@ function ChartSection({ financeData }: Props) {
     legend: { position: 'left', labels: { boxWidth: 32} },
     title: {
       display: true,
-      text: `Total Spent vs Budget Left (${financeData.currencySet})`,
+      text: `${trans.first.title} (${financeData.currencySet})`,
     },
   };
 
@@ -77,7 +76,7 @@ function ChartSection({ financeData }: Props) {
     ...optionsFirstPlot,
     title: {
       display: true,
-      text: 'Number of Expenses by Currency',
+      text: trans.second.title,
     },
   };
 
