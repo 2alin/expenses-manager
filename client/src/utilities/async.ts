@@ -18,6 +18,14 @@ export function getAllExpenses() {
       console.log('success fetching complete expenses list');
       // get the complete list of expenses
       expensesList = res.data.expenses;
+      // parse expense.amount.value as floating number
+      expensesList = expensesList.map((expense: any) => ({
+        ...expense,
+        amount: {
+          ...expense.amount,
+          value: Number.parseFloat(expense.amount.value),
+        },
+      }));
       return expensesList;
     })
     .catch(err => {
