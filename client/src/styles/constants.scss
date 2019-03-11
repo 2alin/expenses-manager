@@ -8,3 +8,21 @@ $semi-transparent-bg: rgba(0,0,0,.5);
 
 $top-bar-height: 40px;
 
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+
+// Small Devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+      @content;
+  }
+}

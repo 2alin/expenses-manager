@@ -11,10 +11,10 @@ function App({ trans }: any) {
       <div className={styles.app}>
         <TopBar titleText={trans.title} />
         <div className={styles.body}>
-          {/* section to display expenses history list, filtered ones and controls */}
-          <History trans={trans.history} />
           {/* section to display charts*/}
           <ChartSection />
+          {/* section to display expenses history list, filtered ones and controls */}
+          <History trans={trans.history} />
         </div>
         {/* container to display options for language, currency and expenses list filter */}
         <OptionsDisplayed />

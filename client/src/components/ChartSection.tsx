@@ -8,12 +8,12 @@ interface Props {
 }
 
 const transparentColors = [
-  'rgba(255, 99, 132, 0.4)',
-  'rgba(54, 162, 235, 0.4)',
-  'rgba(75, 192, 192, 0.4)',
-  'rgba(255, 206, 86, 0.2)',
-  'rgba(153, 102, 255, 0.2)',
-  'rgba(255, 159, 64, 0.2)',
+  'rgba(255, 99, 132, 0.5)',
+  'rgba(54, 162, 235, 0.5)',
+  'rgba(75, 192, 192, 0.5)',
+  'rgba(255, 206, 86, 0.5)',
+  'rgba(153, 102, 255, 0.5)',
+  'rgba(255, 159, 64, 0.5)',
 ];
 
 const solidColors = [
@@ -30,14 +30,14 @@ function ChartSection({ financeData }: Props) {
   const budgetLeft = financeData.budget.value - financeData.totalSpent.value;
 
   const dataFirstChart = {
-    labels: ['Total Spent', 'Budget Left'],
+    labels: ['Spent', 'Left'],
     datasets: [
       {
-        label: 'Spent vs Budget',
+        label: 'Total Spent vs Budget Left',
         data: [totalSpent.toFixed(2), budgetLeft.toFixed(2)],
         backgroundColor: [
-          'rgba(54, 162, 235, 0.4)',
-          'rgba(153, 102, 255, 0.4)',
+          'rgba(54, 162, 235, 0.5)',
+          'rgba(153, 102, 255, 0.5)',
         ],
         borderColor: ['rgba(54, 162, 235, 1)', 'rgba(153, 102, 255, 1)'],
         borderWidth: 1,
@@ -54,7 +54,7 @@ function ChartSection({ financeData }: Props) {
     labels: currencies,
     datasets: [
       {
-        label: 'Spent vs Budget',
+        label: 'Number of Expenses by Currency',
         data: numberExpenses,
         backgroundColor: transparentColors,
         borderColor: solidColors,
@@ -66,10 +66,10 @@ function ChartSection({ financeData }: Props) {
   const optionsFirstPlot = {
     responsive: true,
     maintainAspectRatio: false,
-    legend: { position: 'left' },
+    legend: { position: 'left', labels: { boxWidth: 32} },
     title: {
       display: true,
-      text: `Budget vs Spent (${financeData.currencySet})`,
+      text: `Total Spent vs Budget Left (${financeData.currencySet})`,
     },
   };
 

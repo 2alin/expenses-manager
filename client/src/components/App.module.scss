@@ -7,9 +7,17 @@ $vertical-margin: 0px;
   margin: $vertical-margin auto;
   background: $mix-color-light;
   .body {
-    display: flex;
+    // display: flex;
     background: rgba(0,100,0,0.2);
     height: calc(100% - #{$top-bar-height});
-    flex: 1;
+  }
+}
+
+@include sm {
+  .app {
+    height: auto;
+    .body {
+      height: auto;
+    }
   }
 }

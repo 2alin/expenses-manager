@@ -1,11 +1,36 @@
+@import '../styles/index.scss';
+
 .chartSection {
+  // flex: 1;
+  float: left;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
   height: 100%;
 }
 .chart {
-  width: 400px;
+  width: 100%;
   height: 45%;
+}
+
+@include md {
+  .chartSection {
+    width: 40%;
+    background: pink;
+  }
+}
+
+@include sm {
+  .chartSection {
+    float: none;
+    width: 100%;
+    height: 30vh;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .chart {
+    width: 45%;
+    height: 100%;
+  }
 }
