@@ -6,6 +6,10 @@ export interface Trans {
 export const trans: Trans = {
   EN: {
     title: 'Expenses Manager',
+    i18nOptions: {
+      langDescription: 'Select your language',
+      currDescription: 'Select your currency'
+    },
     history: {
       title: 'History',
       filter: 'Filter',
@@ -45,6 +49,10 @@ export const trans: Trans = {
   },
   ES: {
     title: 'Administrador de Gastos',
+    i18nOptions: {
+      langDescription: 'Selecciona tu idioma',
+      currDescription: 'Selecciona tu moneda'
+    },
     history: {
       title: 'Historial',
       filter: 'Filtrar',

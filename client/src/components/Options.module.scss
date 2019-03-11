@@ -15,18 +15,17 @@
 }
 .main {
   position: relative;
-  max-width: 600px;
-  height: 100%;
-  max-height: 200px;
+  max-width: 420px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 2rem;
+  padding-top: calc(0.5rem + #{$options-close-button-size});
   background: white;
   .exit {
     position: absolute;
-    top:0;
+    top: 0;
     right: 0;
-    width: 40px;
-    height: 40px;
+    width: $options-close-button-size;
+    height: $options-close-button-size;
     background: red;
   }
 }
