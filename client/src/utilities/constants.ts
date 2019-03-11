@@ -1,8 +1,8 @@
 export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
 export const BUDGET = {
-  curr: 'USD',
-  amount: 20000,
+  currency: 'USD',
+  value: 20000,
 };
 
 // indexing signature

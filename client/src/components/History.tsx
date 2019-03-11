@@ -11,17 +11,14 @@ interface Props {
   filtered: Filtered;
   currency: string;
   hadFiltered: boolean;
-  onFetched: (list: Array<Expense>) => void;
+  onFetched: (list: Array<Expense>, currency:string) => void;
 }
 
-interface State {
-  listExpenses: Array<Expense>;
-}
 
 class History extends React.Component<Props> {
   componentDidMount() {
     getAllExpenses().then(res => {
-      this.props.onFetched(res);
+      this.props.onFetched(res,this.props.currency);
     });
   }
   render() {
@@ -48,8 +45,6 @@ class History extends React.Component<Props> {
           <div className={styles.list}>
             {itemsToDisplay.map(item => (
               <ExpenseCard key={item.id} expense={item} currency={currency} />
-              // <div>{item.user.first + ' ' + item.user.last}</div>
-              // <div>{item.amount.currency}</div>
             ))}
           </div>
         ) : (

@@ -1,13 +1,11 @@
 import {
-  Amount,
   Expense,
   FilterOptions,
   LanguageAction,
   CurrencyAction,
-  BudgetAction,
-  TotalSpentAction,
+  Amount,
+  SpentByCurrency,
 } from '../types';
-import { string } from 'prop-types';
 
 // `lang` could be 'EN', 'ES', etc
 export const setLanguage = (language: string): LanguageAction => ({
@@ -19,16 +17,6 @@ export const setLanguage = (language: string): LanguageAction => ({
 export const setCurrency = (currency: string): CurrencyAction => ({
   type: 'SET_CURRENCY',
   currency,
-});
-
-export const setBudget = (budget: Amount): BudgetAction => ({
-  type: 'SET_BUDGET',
-  budget,
-});
-
-export const setTotalSpent = (totalSpent: Amount): TotalSpentAction => ({
-  type: 'SET_TOTAL_SPENT',
-  totalSpent,
 });
 
 export const setExpensesList = (expensesList: Array<Expense>) => ({
@@ -45,10 +33,10 @@ export const filterExpensesList = (
   currency,
 });
 
-export const updateExpense = (expense:Expense) => ({
+export const updateExpense = (expense: Expense) => ({
   type: 'UPDATE_EXPENSE',
-  expense
-})
+  expense,
+});
 
 export const addReceipt = (id: string, receipt: string) => ({
   type: 'ADD_RECEIPT',
@@ -78,8 +66,26 @@ export const setVisibleOptions = (
   optionsToShow,
 });
 
-export const setExpenseToUpdate = (id:string, comment: string) => ({
+export const setExpenseToUpdate = (id: string, comment: string) => ({
   type: 'SET_EXPENSE_TO_UPDATE',
   id,
   comment,
-})
+});
+
+export const setFinanceData = (
+  budget: Amount,
+  totalSpent: Amount,
+  spentByCurrency: SpentByCurrency,
+  currencySet: string
+) => ({
+  type: 'SET_FINANCE_DATA',
+  budget,
+  totalSpent,
+  spentByCurrency,
+  currencySet,
+});
+
+export const updateFinanceCurrency = (currency: string) => ({
+  type: 'UPDATE_FINANCE_CURRENCY',
+  currency,
+});

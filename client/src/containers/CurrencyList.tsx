@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setCurrency, setVisibleOptions } from '../actions';
+import { setCurrency, setVisibleOptions, updateFinanceCurrency } from '../actions';
 import { Store, CurrencyAction } from '../types';
 import I18nList from '../components/I18nList';
 import { EXRATES } from '../utilities/constants';
@@ -15,8 +15,9 @@ const mapStateToProps = (state: Store) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   onClick: (curr: string) => {
-    dispatch(setVisibleOptions(false, 'NONE'));
     dispatch(setCurrency(curr));
+    dispatch(updateFinanceCurrency(curr));
+    dispatch(setVisibleOptions(false, 'NONE'));
   },
 });
 

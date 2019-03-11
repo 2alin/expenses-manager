@@ -68,14 +68,27 @@ export interface ExpenseToUpdate {
   comment: string,
 }
 
+export interface SpentByCurrency {
+  [currency:string]: {
+    numberOfExpenses: number,
+    valueInOriginalCurrency: number
+  }
+}
+
+export interface Finance {
+  budget: Amount;
+  totalSpent: Amount;
+  spentByCurrencyDict: SpentByCurrency,
+  currencySet: string;
+}
+
 export interface Store {
   i18n: I18n;
-  budget: Budget;
-  totalSpent: TotalSpent;
   expenses: Expenses;
   filterOptions: FilterOptions;
   optionsContainer: OptionsContainer;
   expenseToUpdate: ExpenseToUpdate;
+  finance: Finance
 }
 
 //-------------------

@@ -1,5 +1,6 @@
-import { EXRATES } from './constants';
+import { EXRATES, BUDGET } from './constants';
 import { Amount, Expense, FilterOptions } from '../types';
+import CurrencyList from '../containers/CurrencyList';
 
 // formats days/months in 'dd' / 'mm'
 const doubleDigit = (value: number) => {
@@ -78,4 +79,41 @@ export const filterExpenses = (
   }
 
   return filteredList;
+};
+
+export const getSpentByCurrency = (expenseList: Array<Expense>) => {
+  // get a dictionary of the shape
+  // {'USD': {'numberOfExpenses':10, 'valueInOriginalCurrency':2365},...}
+  interface Dict {
+    [index: string]: any;
+  }
+  let dict: Dict = {};
+  for (let expense of expenseList) {
+    let { currency, value } = expense.amount;
+    value += 0;
+    if (currency in dict) {
+      dict[currency].numberOfExpenses += 1;
+      dict[currency].valueInOriginalCurrency += value;
+    } else {
+      dict[currency] = { numberOfExpenses: 1, valueInOriginalCurrency: value };
+    }
+  }
+
+  return dict;
+};
+
+export const getFinanceData = (
+  expenseList: Array<Expense>,
+  currency: string
+) => {
+  const budget = convertCurrency(BUDGET, currency);
+  const spentByCurrency = getSpentByCurrency(expenseList);
+  let totalSpent = 0;
+  for (let currency in spentByCurrency) {
+    totalSpent += convertCurrency(
+      { currency, value: spentByCurrency[currency].valueInOriginalCurrency },
+      currency
+    ).value;
+  }
+  return({budget, totalSpent, spentByCurrency, currencySet:currency})
 };

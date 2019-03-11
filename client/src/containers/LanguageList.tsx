@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setLanguage, setVisibleOptions } from '../actions';
-import { Store, LanguageAction } from '../types';
+import { Store } from '../types';
 import I18nList from '../components/I18nList';
 import { LANGUAGES } from '../utilities/constants';
 
