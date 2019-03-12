@@ -2,12 +2,13 @@
 $vertical-margin: 0px;
 
 .app {
-  max-width: 960px;
+  max-width: 840px;
   height: calc(100vh - 2 * #{$vertical-margin});
   margin: $vertical-margin auto;
   padding: 1rem;
   box-sizing: border-box;
   background: $gray-color;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
   .body {
     height: calc(
       100% - #{$top-bar-height} - #{$margin-md}

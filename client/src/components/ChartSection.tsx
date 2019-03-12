@@ -4,7 +4,7 @@ import { Finance } from '../types';
 import styles from './ChartSection.module.scss';
 
 interface Props {
-  trans: any,
+  trans: any;
   financeData: Finance;
 }
 
@@ -62,39 +62,36 @@ function ChartSection({ trans, financeData }: Props) {
     ],
   };
 
-  const optionsFirstPlot = {
+  const optionsChart = {
     responsive: true,
     maintainAspectRatio: false,
-    legend: { position: 'left', labels: { boxWidth: 32} },
-    title: {
-      display: true,
-      text: `${trans.first.title} (${financeData.currencySet})`,
-    },
-  };
-
-  const optionsSecondPlot = {
-    ...optionsFirstPlot,
-    title: {
-      display: true,
-      text: trans.second.title,
-    },
+    legend: { position: 'left', labels: { boxWidth: 32 } },
   };
 
   return (
     <div className={styles.chartSection}>
-      <div className={styles.chart}>
-        <Chart
-          type={'doughnut'}
-          data={dataFirstChart}
-          options={optionsFirstPlot}
-        />
+      <div className={styles.chartContainer}>
+        <div className={styles.title}>
+          {`${trans.first.title} (${financeData.currencySet})`}
+        </div>
+        <div className={styles.chart}>
+          <Chart
+            type={'doughnut'}
+            data={dataFirstChart}
+            options={optionsChart}
+          />
+        </div>
       </div>
-      <div className={styles.chart}>
-        <Chart
-          type={'doughnut'}
-          data={dataSecondChart}
-          options={optionsSecondPlot}
-        />
+
+      <div className={styles.chartContainer}>
+        <div className={styles.title}>{trans.second.title}</div>
+        <div className={styles.chart}>
+          <Chart
+            type={'doughnut'}
+            data={dataSecondChart}
+            options={optionsChart}
+          />
+        </div>
       </div>
     </div>
   );

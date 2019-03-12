@@ -43,7 +43,7 @@ export const trans: Trans = {
         left: 'Left',
       },
       second: {
-        title: 'Number of Expenses by Currency',
+        title: 'Expenses Number by Currency',
       }
     }
   },
@@ -81,7 +81,7 @@ export const trans: Trans = {
     },
     charts: {
       first: {
-        title: 'Gasto Total vs Resto de Presupuesto',
+        title: 'Gasto vs Presupuesto Restante',
         spent: 'Gasto',
         left: 'Resto',
       },

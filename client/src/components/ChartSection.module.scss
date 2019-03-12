@@ -2,34 +2,66 @@
 
 .chartSection {
   float: left;
-  width: calc(50% - #{$margin-md});
-  height: 100%;
+  width: calc(45% - #{$margin-md});
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  overflow: auto;
+  padding: $margin-md;
+  box-sizing: border-box;
   background: #fff;
 }
-.chart {
+
+.title {
+  height: $title-bar-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding-sm;
+  margin-bottom: $margin-sm;
+  box-sizing: border-box;
+  background: $first-color;
+  color: #fff;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.chartContainer {
   width: 100%;
-  height: 45%;
+  height: calc(50% - 0.5 * #{$margin-md});
+  min-height: calc(120px + #{$title-bar-height}); // avoid overlapping labels
+  &:first-child {
+    margin-bottom: $margin-md;
+  }
+  .chart {
+    height: calc(100% - #{$title-bar-height} - #{$margin-sm});
+  }
 }
 
 @include md {
   .chartSection {
-    width: 40%;
+    width: calc(40% - #{$margin-md});
   }
 }
 
 @include sm {
   .chartSection {
     float: none;
-    width: 100%;
+    width: auto;
     height: 30vh;
+    min-height: 160px; // avoid labels to overlap chart
+    box-sizing: content-box;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: $margin-md;
   }
-  .chart {
-    width: 45%;
-    height: 100%;
+  .chartContainer {
+    width: calc(50%);
+    height: calc(100% - 2 * #{$padding-md});
+    &:first-child {
+      margin-bottom: 0;
+      margin-right: $padding-md;
+    }
   }
 }
