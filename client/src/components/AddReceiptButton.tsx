@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './AddReceiptButton.module.scss';
+import addAttachmentIcon from '../assets/icons/add_attachment.svg';
 
 interface Props {
   buttonText: string;
@@ -9,7 +11,7 @@ interface Props {
 function AddReceiptButton({ buttonText, id, onClick }: Props) {
   return (
     <div onClick={() => onClick(id)}>
-      <button>{buttonText}</button>
+      <button className={styles.button}><img src={addAttachmentIcon} alt={buttonText}/></button>
     </div>
   );
 }

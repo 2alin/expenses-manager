@@ -1,0 +1,6 @@
+@import '../styles/index.scss';
+
+
+.link {
+  @include buttonWithIcon('../assets/icons/i18n-icon.svg')
+}

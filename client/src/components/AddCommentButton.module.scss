@@ -1,0 +1,8 @@
+@import '../styles/index.scss';
+
+.button {
+  @include button;
+  img {
+    width: 1rem;
+  }
+}

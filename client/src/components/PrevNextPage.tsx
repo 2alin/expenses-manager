@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './PrevNextPage.module.scss'
 
 interface Props {
   text: string;
@@ -8,7 +9,7 @@ interface Props {
 
 function PrevNextPage({text, disabled, onClick}:Props) {
   return (
-    <button onClick={onClick} disabled={disabled}>
+    <button onClick={onClick} disabled={disabled} className={styles.button}>
       {text}
     </button>
   )

@@ -1,30 +1,70 @@
+$button-horizontal-padding: 0.5rem;
 
 @mixin button() {
   position: relative;
   display: inline-block;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem $button-horizontal-padding;
   border: none;
   background: none;
   color: inherit;
   font-family: inherit;
-  font-size: .9em;
+  font-size: 0.9em;
   cursor: pointer;
   outline: none;
   user-select: none;
-  &::before{
+  &::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; bottom: 0;
+    top: 0;
+    left: $button-horizontal-padding;
+    bottom: 0;
     width: 0%;
     border-bottom: 2px solid;
-    // height: ;
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     filter: none;
     &::before {
-      width: 100%;
-      transition: width .5s ease;
+      width: calc(100% - 2 * #{$button-horizontal-padding});
+      transition: width 0.5s ease;
     }
-    // border-bottom: 1px solid;
+  }
+
+  // disabled mode
+  &:disabled {
+    filter: brightness(0.5);
+    &:hover,
+    &:focus {
+      &::before {
+        width: 0;
+      }
+    }
+  }
+}
+
+@mixin buttonWithIcon($iconURL) {
+  $icon-size: 1em;
+
+  @include button;
+  position: relative;
+  padding-left: calc(#{$icon-size} + (#{$padding-sm}));
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $icon-size;
+    background: url(#{$iconURL}) no-repeat center / contain;
+  }
+  // shorten underline and move it outside of icon on hover/focus
+  &::before {
+    left: calc(#{$icon-size} + #{$padding-sm});
+  }
+  &:hover,
+  &:focus {
+    &::before {
+      width: calc(100% - #{$icon-size} - 2 * #{$button-horizontal-padding});
+    }
   }
 }
