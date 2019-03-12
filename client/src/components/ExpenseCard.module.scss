@@ -8,6 +8,7 @@
 }
 
 .main {
+  margin-bottom: $margin-sm;
   .row {
     display: flex;
     justify-content: space-between;
@@ -25,6 +26,15 @@
   .name {
     font-size: 0.9rem;
   }
+}
+
+.comment {
+  padding: 0 $margin-sm;
+  margin: 0 $margin-md;
+  margin-bottom: $margin-sm;
+  font-weight: 300;
+  font-style: italic;
+  border-left: 2px solid;
 }
 
 .footer {

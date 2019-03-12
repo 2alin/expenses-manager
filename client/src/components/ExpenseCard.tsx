@@ -15,9 +15,8 @@ function ExpenseCard({ expense, currency }: Props) {
   const name = user.first + ' ' + user.last;
   const date = toYYMMDD(new Date(expense.date));
   const altAmount = convertCurrency(amount, currency);
-  const amountText = `${amount.value} ${
-    amount.currency
-  } (${altAmount.value.toFixed(2)} ${altAmount.currency})`;
+  const originalAmountText = `${amount.value} ${amount.currency}`;
+  const altAmountText = `${altAmount.value.toFixed(2)} ${altAmount.currency}`;
   return (
     <div className={styles.card}>
       {/* MAIN: includes all the info except comment */}
@@ -39,7 +38,10 @@ function ExpenseCard({ expense, currency }: Props) {
           <span className={[styles.rightMargin, styles.light].join(' ')}>
             {user.email}
           </span>
-          <span className={styles.light}>{amountText}</span>
+          <span className={styles.light}>
+            <span className={styles.bold}>{originalAmountText}</span> (
+            {altAmountText})
+          </span>
         </div>
       </div>
       {/* Comment section, if it exists */}
