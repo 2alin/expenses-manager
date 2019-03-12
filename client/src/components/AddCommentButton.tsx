@@ -13,7 +13,7 @@ function AddCommentButton({ buttonText, id, comment, onClick }: Props) {
   console.log(addCommentIcon);
   return (
     <div onClick={() => onClick(id, comment)}>
-      <button className={styles.button}><img src={addCommentIcon} alt={buttonText}/></button>
+      <button className={styles.button}><img src={addCommentIcon} alt=''/></button>
     </div>
   );
 }

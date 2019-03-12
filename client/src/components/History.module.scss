@@ -15,14 +15,23 @@
     align-items: center;
     padding: 0.5rem;
     background: $first-color;
-    // background-image:linear-gradient(hsla(0, 0%, 100%, 0.1) 0 100%);
     color: #fff;
   }
 
   .list {
     overflow: auto;
   }
-  .filterDone {
+
+  .filterBar {
+    display: flex;
+    align-items: center;
+    .filterDone {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin-right: 1rem;
+      background: url('../assets/icons/done.svg') no-repeat center / contain;
+    }
   }
 }
 

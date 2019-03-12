@@ -11,7 +11,7 @@ interface Props {
 function AddReceiptButton({ buttonText, id, onClick }: Props) {
   return (
     <div onClick={() => onClick(id)}>
-      <button className={styles.button}><img src={addAttachmentIcon} alt={buttonText}/></button>
+      <button className={styles.button}><img src={addAttachmentIcon} alt=''/></button>
     </div>
   );
 }

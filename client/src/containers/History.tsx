@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import { Store, Expense } from '../types';
 import History from '../components/History';
 import { setExpensesList, setFinanceData } from '../actions';
-import { BUDGET } from '../utilities/constants';
-import { getSpentByCurrency, getFinanceData } from '../utilities/methods';
+import { getFinanceData } from '../utilities/methods';
 
 const mapStateToProps = (state: Store, ownProps: any) => ({
   ...ownProps,

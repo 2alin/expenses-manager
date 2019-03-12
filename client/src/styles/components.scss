@@ -43,7 +43,7 @@ $button-horizontal-padding: 0.5rem;
 }
 
 @mixin buttonWithIcon($iconURL) {
-  $icon-size: 1em;
+  $icon-size: 1rem;
 
   @include button;
   position: relative;

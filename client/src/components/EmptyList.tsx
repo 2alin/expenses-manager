@@ -1,33 +1,33 @@
 import React from 'react';
 import warningIcon from '../assets/icons/circle-warning.svg';
 import styles from './EmptyList.module.scss'
+import { trans } from '../utilities/i18n';
 
 interface Props {
+  trans: any;
   hadFiltered: boolean;
   hasError: boolean;
 }
 
-function EmptyList({ hadFiltered, hasError }: Props) {
+function EmptyList({trans, hadFiltered, hasError }: Props) {
   return (
     <div className={styles.container}>
       {hadFiltered ? (
         <React.Fragment>
           <img src={warningIcon} alt="Warning" />
           <p>
-            You are getting an empty list with the filters you chose. Try
-            changing your filter options.
+            {trans.emptyListFilter}
           </p>
         </React.Fragment>
       ) : hasError ? (
         <React.Fragment>
           <img src={warningIcon} alt="Warning" />
           <p>
-            Error while fetching data from the server. Please check if your API
-            is running, and reload after that.
+            {trans.errorAPI}
           </p>
         </React.Fragment>
       ) : (
-        <p>Loading...</p>
+        <p>{trans.loading}...</p>
       )}
     </div>
   );

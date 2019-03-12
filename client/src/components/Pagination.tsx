@@ -17,7 +17,7 @@ function Pagination({trans, page, total, itemsPerPage }: Props) {
         <PrevPage text={trans.previous} disabled={page <= 1}/>
         <NextPage text={trans.next} disabled={(page*itemsPerPage) >= total}/>
       </div>
-      <span>
+      <span className={styles.page}>
         {(page - 1) * itemsPerPage + 1} - {page * itemsPerPage} / {total}
       </span>
     </div>
