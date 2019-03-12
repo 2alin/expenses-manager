@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from './Link'
-import styles from './Link.module.scss';
+import styles from './FilterLink.module.scss';
 
 interface Props {
   text: string;
