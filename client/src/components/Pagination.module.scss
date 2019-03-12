@@ -1,6 +1,10 @@
+@import '../styles/index.scss';
+
 .bar {
   display: flex;
   justify-content: space-between;
-  background:lightblue;
-
+  padding: $padding-sm;
+  background: $first-color;
+    background-image:linear-gradient(hsla(0, 0%, 100%, 0.1) 0 100%);
+    color: #fff;
 }

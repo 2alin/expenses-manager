@@ -2,7 +2,11 @@
 
 .titleBar {
   height: $top-bar-height;
-  background:lightgray;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: $margin-md;
+  padding: .5rem;
+  box-sizing: border-box;
+  background:#fff;
 }

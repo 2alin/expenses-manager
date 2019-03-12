@@ -5,11 +5,14 @@ $vertical-margin: 0px;
   max-width: 960px;
   height: calc(100vh - 2 * #{$vertical-margin});
   margin: $vertical-margin auto;
-  background: $mix-color-light;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: $gray-color;
   .body {
-    // display: flex;
-    background: rgba(0,100,0,0.2);
-    height: calc(100% - #{$top-bar-height});
+    height: calc(
+      100% - #{$top-bar-height} - #{$margin-md}
+    );
+    box-sizing: border-box;
   }
 }
 

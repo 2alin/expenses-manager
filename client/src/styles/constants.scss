@@ -3,11 +3,20 @@ $first-color-light: #C8C8A9;
 $second-color: #FE4365;
 $second-color-light: #FC9D9A;
 $mix-color-light: #F9CDAD;
+$gray-color: #ededf0;
 
 $semi-transparent-bg: rgba(0,0,0,.5);
 
-$top-bar-height: 40px;
+$top-bar-height: 48px;
 $options-close-button-size: 36px;
+
+$padding-md: 1em;
+$padding-sm: .5em;
+$margin-md: 1em;
+$margin-sm: .5em;
+
+//inclination for gradient and button hover effect
+$inclination-value: 30deg; // or try 34deg or 56deg
 
 // Small tablets and large smartphones (landscape view)
 $screen-sm-max: 576px;

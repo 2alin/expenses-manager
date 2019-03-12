@@ -1,13 +1,13 @@
 @import '../styles/index.scss';
 
 .chartSection {
-  // flex: 1;
   float: left;
-  width: 50%;
+  width: calc(50% - #{$margin-md});
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  background: #fff;
 }
 .chart {
   width: 100%;
@@ -17,7 +17,6 @@
 @include md {
   .chartSection {
     width: 40%;
-    background: pink;
   }
 }
 

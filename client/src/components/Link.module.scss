@@ -1,3 +1,7 @@
+@import '../styles/index.scss';
+
 .link {
+  @include button($first-color);
   margin: 0 4px;
+
 }

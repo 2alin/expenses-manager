@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import './styles/index.scss';
 
-html{
+html {
   font-family: 'Roboto', sans-serif;
 }
 
 body {
   margin: 0;
+}
+// inclination degre: 56deg or 34
+#root {
+  background: $first-color;
+  background-image: repeating-linear-gradient(
+    $inclination-value,
+    hsla(0, 0%, 100%, 0.1) 0 20px,
+    transparent 20px 40px
+  );
 }
