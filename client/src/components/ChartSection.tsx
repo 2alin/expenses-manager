@@ -68,30 +68,37 @@ function ChartSection({ trans, financeData }: Props) {
     legend: { position: 'left', labels: { boxWidth: 32 } },
   };
 
+  const chartHasData = Object.keys(financeData.spentByCurrency).length > 0;
+
   return (
     <div className={styles.chartSection}>
       <div className={styles.chartContainer}>
         <div className={styles.title}>
           {`${trans.first.title} (${financeData.currencySet})`}
         </div>
-        <div className={styles.chart}>
-          <Chart
-            type={'doughnut'}
-            data={dataFirstChart}
-            options={optionsChart}
-          />
-        </div>
+
+        {chartHasData && (
+          <div className={styles.chart}>
+            <Chart
+              type={'doughnut'}
+              data={dataFirstChart}
+              options={optionsChart}
+            />
+          </div>
+        )}
       </div>
 
       <div className={styles.chartContainer}>
         <div className={styles.title}>{trans.second.title}</div>
-        <div className={styles.chart}>
-          <Chart
-            type={'doughnut'}
-            data={dataSecondChart}
-            options={optionsChart}
-          />
-        </div>
+        {chartHasData && (
+          <div className={styles.chart}>
+            <Chart
+              type={'doughnut'}
+              data={dataSecondChart}
+              options={optionsChart}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

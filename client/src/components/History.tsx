@@ -1,8 +1,9 @@
 import React from 'react';
+import EmptyList from './EmptyList';
 import Pagination from './Pagination';
 import ExpenseCard from './ExpenseCard';
 import FilterLink from '../containers/FilterLink';
-import {getAllExpenses} from '../utilities/async';
+import { getAllExpenses } from '../utilities/async';
 import { Filtered, Expense } from '../types';
 import styles from './History.module.scss';
 
@@ -11,16 +12,30 @@ interface Props {
   filtered: Filtered;
   currency: string;
   hadFiltered: boolean;
-  onFetched: (list: Array<Expense>, currency:string) => void;
+  onFetched: (list: Array<Expense>, currency: string) => void;
 }
 
-
 class History extends React.Component<Props> {
-  componentDidMount() {
-    getAllExpenses().then(res => {
-      this.props.onFetched(res,this.props.currency);
-    });
+  state: {
+    hasError: boolean;
+  };
+  constructor(props: Props) {
+    super(props);
+    this.state = { hasError: false };
   }
+
+  componentDidMount() {
+    getAllExpenses()
+      .then(res => {
+        this.props.onFetched(res, this.props.currency);
+      })
+      .catch(err => {
+        // catching API errors, to show appropriate UI message
+        console.log(err);
+        this.setState({hasError: true})
+      });
+  }
+
   render() {
     const {
       list: filteredList,
@@ -36,8 +51,7 @@ class History extends React.Component<Props> {
         <div className={styles.bar}>
           <span>{this.props.trans.title}</span>
           <div>
-            { hadFiltered &&
-            <span className={styles.filterDone}>Done!</span>}
+            {hadFiltered && <span className={styles.filterDone}>Done!</span>}
             <FilterLink text={this.props.trans.filter} />
           </div>
         </div>
@@ -48,9 +62,11 @@ class History extends React.Component<Props> {
             ))}
           </div>
         ) : (
-          <div className="emptyList">Nothing to show :(</div>
+          <EmptyList hadFiltered={hadFiltered} hasError={this.state.hasError} />
         )}
-        <Pagination {...{trans:this.props.trans.footer, page, total, itemsPerPage }} />
+        <Pagination
+          {...{ trans: this.props.trans.footer, page, total, itemsPerPage }}
+        />
       </div>
     );
   }
