@@ -8,6 +8,7 @@ interface Props {
   financeData: Finance;
 }
 
+// only 3 colors are needed, but more could be used in the future
 const transparentColors = [
   'rgba(255, 99, 132, 0.5)',
   'rgba(54, 162, 235, 0.5)',
@@ -17,6 +18,7 @@ const transparentColors = [
   'rgba(153, 102, 255, 0.5)',
 ];
 
+// only 3 colors are needed, but more could be used in the future
 const solidColors = [
   'rgba(255,99,132,1)',
   'rgba(54, 162, 235, 1)',

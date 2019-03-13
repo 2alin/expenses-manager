@@ -1,5 +1,4 @@
 import React from 'react';
-import { toYYMMDD } from '../utilities/methods';
 import { FilterOption } from '../types';
 
 interface Props {

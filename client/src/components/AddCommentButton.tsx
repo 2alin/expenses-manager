@@ -10,7 +10,7 @@ interface Props {
 }
 
 function AddCommentButton({ buttonText, id, comment, onClick }: Props) {
-  console.log(addCommentIcon);
+  // `buttonText` can be used to replace the logo by translated text
   return (
     <div onClick={() => onClick(id, comment)}>
       <button className={styles.button}><img src={addCommentIcon} alt=''/></button>

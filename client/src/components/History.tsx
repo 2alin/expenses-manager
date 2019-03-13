@@ -32,7 +32,6 @@ class History extends React.Component<Props> {
       })
       .catch(err => {
         // catching API errors, to show appropriate UI message
-        console.log(err);
         this.setState({ hasError: true });
       });
   }

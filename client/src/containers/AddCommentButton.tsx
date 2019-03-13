@@ -12,8 +12,6 @@ const mapStateToProps = (state: Store, ownProps: any) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   onClick: (id: string, comment: string) => {
-    console.log(id);
-    console.log(comment);
     dispatch(setExpenseToUpdate(id, comment));
     dispatch(setVisibleOptions(true, 'COMMENT'));
   },

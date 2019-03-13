@@ -16,7 +16,7 @@ function App({ trans }: any) {
           {/* section to display expenses history list, filtered ones and controls */}
           <History trans={trans.history} />
         </div>
-        {/* container to display options for language, currency and expenses list filter */}
+        {/* container to display any kind of configuration popups */}
         <OptionsDisplayed />
       </div>
     </React.Fragment>

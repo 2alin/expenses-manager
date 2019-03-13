@@ -5,8 +5,8 @@ export const BUDGET = {
   value: 500000,
 };
 
-// indexing signature
 interface Languages {
+  // indexing signature
   [index: string]: string;
 }
 interface ExRates {

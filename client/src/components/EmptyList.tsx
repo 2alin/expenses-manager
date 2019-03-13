@@ -1,7 +1,6 @@
 import React from 'react';
 import warningIcon from '../assets/icons/circle-warning.svg';
 import styles from './EmptyList.module.scss'
-import { trans } from '../utilities/i18n';
 
 interface Props {
   trans: any;

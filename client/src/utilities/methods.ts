@@ -2,8 +2,8 @@ import { EXRATES, BUDGET } from './constants';
 import { Amount, Expense, FilterOptions } from '../types';
 import CurrencyList from '../containers/CurrencyList';
 
-// formats days/months in 'dd' / 'mm'
 const doubleDigit = (value: number) => {
+  // formats days and months numeric values inro 'dd' or 'mm'
   return (value < 10 ? '0' : '') + value;
 };
 
@@ -106,6 +106,10 @@ export const getFinanceData = (
   expenseList: Array<Expense>,
   currency: string
 ) => {
+  /* 
+  receives a list of expenses and returns an object 
+  with the data optimized for charts 
+  */
   const budget = convertCurrency(BUDGET, currency);
   const spentByCurrency = getSpentByCurrency(expenseList);
   let totalSpent = 0;
@@ -115,5 +119,5 @@ export const getFinanceData = (
       currency
     ).value;
   }
-  return({budget, totalSpent, spentByCurrency, currencySet:currency})
+  return { budget, totalSpent, spentByCurrency, currencySet: currency };
 };

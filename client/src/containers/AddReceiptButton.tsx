@@ -11,7 +11,6 @@ const mapStateToProps = (state: Store, ownProps: any) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   onClick: (id: string) => {
-    console.log(id);
     dispatch(setExpenseToUpdate(id, ''));
     dispatch(setVisibleOptions(true, 'RECEIPT'));
   },

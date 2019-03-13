@@ -13,7 +13,6 @@ const mapStateToProps = (state: Store, ownProps: any) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   onSubmit: (id: string, comment: string) => {
-    console.log('comment', comment);
     uploadComment(id, comment).then((res) => {
       dispatch(updateExpense(res));
     })

@@ -1,4 +1,3 @@
-import { Amount } from '../types';
 import {convertCurrency} from '../utilities/methods'
 
 const initialState = {
@@ -18,7 +17,6 @@ const finance = (state = initialState, action:any) => {
         currencySet: action.currencySet
       }
     case 'UPDATE_FINANCE_CURRENCY':
-      console.log('updating finance');
       return {
         ...state,
         budget: convertCurrency(state.budget, action.currency),

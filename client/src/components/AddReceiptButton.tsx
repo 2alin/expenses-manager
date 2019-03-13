@@ -9,6 +9,7 @@ interface Props {
 }
 
 function AddReceiptButton({ buttonText, id, onClick }: Props) {
+  // `buttonText` can be used to replace the logo by translated text
   return (
     <div onClick={() => onClick(id)}>
       <button className={styles.button}><img src={addAttachmentIcon} alt=''/></button>

@@ -1,5 +1,5 @@
-// for index signature purposes
 export interface Trans {
+  // for index signature purposes
   [prop: string]: any;
 }
 

@@ -48,9 +48,6 @@ export function uploadComment(id: string, comment: string) {
 }
 
 export function uploadReceipt(id: string, data: any) {
-  console.log('inside uploadReceipt');
-  console.log('data:', data);
-  console.log('get all:', data.getAll('file'));
   return axios
     .post(API_URL + '/expenses/' + id + '/receipts', data, {
       headers: {

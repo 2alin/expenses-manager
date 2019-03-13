@@ -44,8 +44,10 @@ function ExpenseCard({ expense, currency }: Props) {
           </span>
         </div>
       </div>
+
       {/* Comment section, if it exists */}
       {comment.trim() != '' && <div className={styles.comment}>{comment}</div>}
+
       {/* FOOTER: includes controls to add comments and receipts*/}
       <div className={styles.footer}>
         <AddCommentButton id={expense.id} comment={expense.comment} />

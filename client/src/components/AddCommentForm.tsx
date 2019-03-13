@@ -43,8 +43,4 @@ class AddCommentForm extends React.Component<Props> {
   }
 }
 
-// const AddCommentForm = ({id,comment, onClick}:Props) => {
-//   return (<div>There</div>)
-// }
-
 export default AddCommentForm;
