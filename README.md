@@ -1,7 +1,52 @@
+## Installation
+For the API:
+```
+cd api
+npm install
+npm start
+```
+For the App:
+```
+cd client
+npm install
+npm start
+```
 
-Solution by Adilson Sandoval, still work in progress, please wait to be finished.
+## Project Description
+First of all, thank you for the opportunity and your valuable time reviewing my solution to this challenge. I learned a freaking lot from it and I'm very happy already because of that.
 
+Since the very beginning, I wanted to make this great so I fulfilled all the requirements needed as well as the 'extra' ones. The web app was made using React, Redux and TypeScript, as well as [CSS Modules](https://facebook.github.io/create-react-app/docs/adding-a-css-modules-stylesheet) and SASS for the components styling.
+
+It has the next features:
+
+- It list all the expenses in a structured and organized way, with pagination implemented.
+
+- You can add comments and receipt images for each expense and it updates the expense to display the comment added and lists the receipts saved. It also retrieves saved comments for easy modification.
+
+- Five customized filters: Min/Max Date, Min/Max Amount and Currency Used. Each one can be disabled independently for better user experience.
+
+- A special chart section to display useful information to the user. The first plot changes its values accordingly to the currency selected, but because it's a percentage one, the shape is maintained; you need to hover it, in order to see the changed value.
+
+- Responsive design. The layout adapts to large, medium and small screens through media queries (short coded ones).
+
+- It supports currency and language selector. For the currency, I used a constant list of currency rates to make the conversions (values from a week ago) but it can be easily adjusted to fetch the rates from an third-party API. For the language, because the project was small, I didn't want to install a new library to handle it, so I implemented my own external i18n object with all the translations needed in a structured way and pass fractions of them as props with redux to the respective component.
+
+- It shows suitable messages to the user, when there's an API error (not fetching data), in loading state or the filtered list is empty.
+
+I didn't know TypeScript before the project so I took the first 4-5 days to learn the basics of it and improve my skills on Redux. To be honest, at the beginning I had my doubts about the advantages of using TypeScript, but in the middle of the project I realized how helpful it was: providing useful auto completion on real time and notifying me when I used wrong values in order to avoid bugs even before compiling. I kinda like it now.
+
+Then I took around 6 days to create and polish the web application. It was an exciting journey and while working on it, I frequently changed the structure of the project or the components themselves to improve future maintenance and keep things organized. The hardest parts to implement were TypeScript and Redux at the beginning, but something curious happened: the same project structure helped me to learn and understand them better.
+
+About what I'm most proud, I specially enjoyed implementing language/currency conversion and the user filters feature. But what I loved the most was the whole journey of creating, fixing, improving and implementing new ideas in this project.
+
+
+Thank you so much, again. :blush:
+ 
 ---
+
+<details>
+ 
+<summary>Click here to expand the original challenge's instructions</summary>
 
 # Front-end challenge
 Implement an expenses list fetching all expenses from the provided API. Allow the user to add notes and upload receipt pictures to each expense.
@@ -35,3 +80,5 @@ Want to go the extra mile? Here's few suggestion of things we'd like to see (or 
 - Showing your work through your commit history
 - Polish and visual creativity
 - Pride in craftsmanship
+
+</details>
