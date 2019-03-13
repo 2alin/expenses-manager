@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './AddReceiptForm.module.scss';
 
 interface Props {
   trans: any;
@@ -35,7 +36,7 @@ export default class AddReceiptForm extends React.Component<Props> {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className={styles.form}>
         <input
           type="file"
           name="fileSelector"

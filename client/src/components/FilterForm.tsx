@@ -3,13 +3,13 @@ import FilterFormOptionDate from './FilterFormOptionDate';
 import FilterFormOptionAmount from './FilterFormOptionAmount';
 import FilterFormOptionSelect from './FilterFormOptionSelect';
 import { Store, FilterOptions } from '../types';
-
+import styles from './filterForm.module.scss';
 
 interface Props {
   trans: any;
   options: FilterOptions;
   currency: string;
-  onClick: (options: FilterOptions, currency:string) => void;
+  onClick: (options: FilterOptions, currency: string) => void;
 }
 
 class FilterForm extends React.Component<Props> {
@@ -37,46 +37,55 @@ class FilterForm extends React.Component<Props> {
   };
   render() {
     const trans = this.props.trans;
-
     return (
       <form
         action=""
         onSubmit={e => {
           e.preventDefault();
         }}
+        className={styles.form}
       >
-        <FilterFormOptionDate text={trans.startDate}
+        <FilterFormOptionDate
+          text={trans.startDate}
           optionName={'startDate'}
           filterOption={this.state.startDate}
           handleCheck={this.handleCheck}
           handleChange={this.handleDateChange}
         />
-        <FilterFormOptionDate text={trans.endDate}
+        <FilterFormOptionDate
+          text={trans.endDate}
           optionName={'endDate'}
           filterOption={this.state.endDate}
           handleCheck={this.handleCheck}
           handleChange={this.handleDateChange}
         />
-        <FilterFormOptionAmount text={trans.minAmount}
+        <FilterFormOptionAmount
+          text={trans.minAmount + ` (${this.props.currency})`}
           optionName={'minAmount'}
           filterOption={this.state.minAmount}
           handleCheck={this.handleCheck}
           handleChange={this.handleChange}
         />
-        <FilterFormOptionAmount text={trans.maxAmount}
+        <FilterFormOptionAmount
+          text={trans.maxAmount + ` (${this.props.currency})`}
           optionName={'maxAmount'}
           filterOption={this.state.maxAmount}
           handleCheck={this.handleCheck}
           handleChange={this.handleChange}
         />
-        <FilterFormOptionSelect text={trans.currency}
+        <FilterFormOptionSelect
+          text={trans.currency}
           optionName={'currency'}
           filterOption={this.state.currency}
           handleCheck={this.handleCheck}
           handleChange={this.handleChange}
         />
-        <div className="row">
-          <button onClick={() => this.props.onClick(this.state, this.props.currency)}>{trans.filter}</button>
+        <div>
+          <button
+            onClick={() => this.props.onClick(this.state, this.props.currency)}
+          >
+            {trans.filter}
+          </button>
         </div>
       </form>
     );

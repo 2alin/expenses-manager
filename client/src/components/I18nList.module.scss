@@ -1,3 +1,10 @@
+@import '../styles/index.scss';
+
+.description {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -5,9 +12,7 @@
   padding: 0;
   list-style: none;
   li {
-    display: inline-block;
-    margin:.5rem;
-    cursor: pointer;
+    @include button;
   }
 }
 

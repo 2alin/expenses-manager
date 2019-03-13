@@ -19,14 +19,16 @@ function FilterFormOptionDate({
 }: Props) {
   return (
     <div>
-      <input
-        type="checkbox"
-        name={optionName + 'Check'}
-        id={optionName + 'Check'}
-        onChange={e => handleCheck(e, optionName)}
-        checked={filterOption.isOn}
-      />
-      <label htmlFor={optionName + 'Check'}>{text}</label>
+      <div>
+        <input
+          type="checkbox"
+          name={optionName + 'Check'}
+          id={optionName + 'Check'}
+          onChange={e => handleCheck(e, optionName)}
+          checked={filterOption.isOn}
+        />
+        <label htmlFor={optionName + 'Check'}>{text}</label>
+      </div>
       <input
         disabled={!filterOption.isOn}
         type="number"

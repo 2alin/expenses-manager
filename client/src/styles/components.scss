@@ -22,7 +22,8 @@ $button-horizontal-padding: 0.5rem;
     border-bottom: 2px solid;
   }
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     filter: none;
     &::before {
       width: calc(100% - 2 * #{$button-horizontal-padding});
@@ -32,6 +33,7 @@ $button-horizontal-padding: 0.5rem;
 
   // disabled mode
   &:disabled {
+    cursor: default;
     filter: brightness(0.5);
     &:hover,
     &:focus {
@@ -65,6 +67,26 @@ $button-horizontal-padding: 0.5rem;
   &:focus {
     &::before {
       width: calc(100% - #{$icon-size} - 2 * #{$button-horizontal-padding});
+    }
+  }
+}
+
+@mixin formInput {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.75rem;
+  outline: none;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 2px black;
+  }
+  &:disabled {
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      cursor: default;
     }
   }
 }

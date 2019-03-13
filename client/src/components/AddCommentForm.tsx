@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './AddCommentForm.module.scss'
 
 interface Props {
   buttonText: string,
@@ -28,7 +29,7 @@ class AddCommentForm extends React.Component<Props> {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className={styles.form}>
         <input
           type="text"
           name="comment"

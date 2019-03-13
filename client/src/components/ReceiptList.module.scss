@@ -1,14 +1,16 @@
 .list {
   display: flex;
+  margin: 0;
   padding: 0;
   list-style: none;
 
   li {
-    margin: 0 0.4rem;
+    margin: 0 .25rem;
   }
 
-  a, a:visited {
-    color:inherit;
+  a,
+  a:visited {
+    padding:.25rem;
+    color: inherit;
   }
-
 }

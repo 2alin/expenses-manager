@@ -18,14 +18,20 @@
   max-width: 420px;
   margin: 0 auto;
   padding: 2rem;
-  padding-top: calc(0.5rem + #{$options-close-button-size});
+  padding-top: 1rem;
   background: white;
   .exit {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 4px;
+    right: 4px;
     width: $options-close-button-size;
     height: $options-close-button-size;
-    background: red;
+    background: url('../assets/icons/close.svg') no-repeat center / contain;
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover {
+      border-color: inherit;
+      transition: border-color .5s ease;
+    }
   }
 }
