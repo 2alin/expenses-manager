@@ -41,6 +41,10 @@ About what I'm most proud, I specially enjoyed implementing language/currency co
 
 
 Thank you so much, again. :blush:
+
+## Video
+Follow the next link to see the app features on action:
+https://www.youtube.com/watch?v=XlbZoScbzkQ
  
 ---
 
