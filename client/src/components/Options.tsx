@@ -5,6 +5,7 @@ import FilterForm from '../containers/FilterForm';
 import AddCommentForm from '../containers/AddCommentForm';
 import AddReceiptForm from '../containers/AddReceiptForm';
 import styles from './Options.module.scss';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 interface Props {
   displayed: boolean;
@@ -17,24 +18,35 @@ export default function Options({
   optionsToShow,
   onExitClick,
 }: any) {
-  let classList = [styles.container];
-
-  if (displayed) classList.push(styles.displayed);
 
   return (
-    <div className={classList.join(' ')}>
-      <div className={styles.main}>
-        <div className={styles.exit} onClick={onExitClick} />
-        {optionsToShow === 'I18N' && (
-          <React.Fragment>
-            <LanguageList />
-            <CurrencyList />
-          </React.Fragment>
-        )}
-        {optionsToShow === 'FILTER_LIST' && <FilterForm />}
-        {optionsToShow === 'COMMENT' && <AddCommentForm />}
-        {optionsToShow === 'RECEIPT' && <AddReceiptForm />}
-      </div>
-    </div>
+    <TransitionGroup component={null}>
+      {displayed ? (
+        <CSSTransition
+          timeout={300}
+          classNames={{
+            enter: styles.enter,
+            enterActive: styles['enter-active'],
+            exit: styles.exit,
+            exitActive: styles['exit-active'],
+          }}
+        >
+          <div className={styles.container}>
+            <div className={styles.main}>
+              <div className={styles.exit} onClick={onExitClick} />
+              {optionsToShow === 'I18N' && (
+                <React.Fragment>
+                  <LanguageList />
+                  <CurrencyList />
+                </React.Fragment>
+              )}
+              {optionsToShow === 'FILTER_LIST' && <FilterForm />}
+              {optionsToShow === 'COMMENT' && <AddCommentForm />}
+              {optionsToShow === 'RECEIPT' && <AddReceiptForm />}
+            </div>
+          </div>
+        </CSSTransition>
+      ) : null}
+    </TransitionGroup>
   );
 }

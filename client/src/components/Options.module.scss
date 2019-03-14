@@ -2,16 +2,13 @@
 
 .container {
   background: $semi-transparent-bg;
-  display: none;
+  display: flex;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  &.displayed {
-    display: flex;
-    align-items: center;
-  }
 }
 .main {
   position: relative;
@@ -31,7 +28,33 @@
     cursor: pointer;
     &:hover {
       border-color: inherit;
-      transition: border-color .5s ease;
+      transition: border-color 0.5s ease;
     }
   }
+}
+
+/* 
+  T R A N S I T I O N S
+*/
+
+.enter {
+  // top: calc(-1 * 100vh);
+  opacity: 0.01;
+}
+
+.enter-active {
+  // top: 0;
+  opacity: 1;
+  transition: all 300ms;
+}
+
+.exit {
+  // top: 0;
+  opacity: 1;
+}
+
+.exit-active {
+  // top: calc(-1 * 100vh);
+  opacity: 0.01;
+  transition: all 300ms;
 }

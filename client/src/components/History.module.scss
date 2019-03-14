@@ -49,3 +49,33 @@
     height: 100vh;
   }
 }
+
+/* 
+  T R A N S I T I O N S
+*/
+
+.fadeIn {
+  opacity: 0.01;
+  transform: scale(0.5);
+}
+
+.fadeInActive {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 600ms;
+}
+
+.fadeOut {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fadeOutActive {
+  opacity: 0.01;
+  transform: scale(1.1);
+  transition: all 600ms;
+}
+
+.swipe-in {
+
+}

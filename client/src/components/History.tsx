@@ -7,6 +7,7 @@ import { getAllExpenses } from '../utilities/async';
 import { Filtered, Expense } from '../types';
 import styles from './History.module.scss';
 import { trans } from '../utilities/i18n';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 interface Props {
   trans: any;
@@ -51,7 +52,21 @@ class History extends React.Component<Props> {
         <div className={styles.bar}>
           <span>{this.props.trans.title}</span>
           <div className={styles.filterBar}>
-            {hadFiltered && <span className={styles.filterDone} />}
+            <TransitionGroup component={null}>
+              {hadFiltered && (
+                <CSSTransition
+                  timeout={600}
+                  classNames={{
+                    enter: styles.fadeIn,
+                    enterActive: styles.fadeInActive,
+                    exit: styles.fadeOut,
+                    exitActive: styles.fadeOutActive,
+                  }}
+                >
+                  <span className={styles.filterDone} />
+                </CSSTransition>
+              )}
+            </TransitionGroup>
             <FilterLink text={this.props.trans.filter} />
           </div>
         </div>
