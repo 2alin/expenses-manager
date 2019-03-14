@@ -26,9 +26,9 @@ export default function Options({
           timeout={300}
           classNames={{
             enter: styles.enter,
-            enterActive: styles['enter-active'],
+            enterActive: styles.enterActive,
             exit: styles.exit,
-            exitActive: styles['exit-active'],
+            exitActive: styles.exitActive,
           }}
         >
           <div className={styles.container}>
