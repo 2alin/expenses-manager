@@ -9,6 +9,13 @@ import styles from './History.module.scss';
 import { trans } from '../utilities/i18n';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+const transitionClasses = {
+  enter: styles.fadeIn,
+  enterActive: styles.fadeInActive,
+  exit: styles.fadeOut,
+  exitActive: styles.fadeOutActive,
+};
+
 interface Props {
   trans: any;
   filtered: Filtered;
@@ -47,22 +54,20 @@ class History extends React.Component<Props> {
     const { currency, hadFiltered } = this.props;
     const itemsToDisplay = filteredList.slice((page - 1) * 10, page * 10);
 
+    console.log(finalList);
     return (
       <div className={styles.container}>
+        {/* History Top Bar */}
         <div className={styles.bar}>
+          {/* title */}
           <span>{this.props.trans.title}</span>
+          {/* Search Input */}
+          <input type="text" onChange={this.handleChange} />
+          {/* filter section */}
           <div className={styles.filterBar}>
             <TransitionGroup component={null}>
               {hadFiltered && (
-                <CSSTransition
-                  timeout={600}
-                  classNames={{
-                    enter: styles.fadeIn,
-                    enterActive: styles.fadeInActive,
-                    exit: styles.fadeOut,
-                    exitActive: styles.fadeOutActive,
-                  }}
-                >
+                <CSSTransition timeout={600} classNames={transitionClasses}>
                   <span className={styles.filterDone} />
                 </CSSTransition>
               )}
@@ -83,6 +88,7 @@ class History extends React.Component<Props> {
             trans={this.props.trans.messages}
           />
         )}
+        {/* History Bottom Bar */}
         <Pagination
           {...{ trans: this.props.trans.footer, page, total, itemsPerPage }}
         />

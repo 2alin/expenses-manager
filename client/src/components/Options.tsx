@@ -7,6 +7,13 @@ import AddReceiptForm from '../containers/AddReceiptForm';
 import styles from './Options.module.scss';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+const transitionClasses = {
+  enter: styles.enter,
+  enterActive: styles.enterActive,
+  exit: styles.exit,
+  exitActive: styles.exitActive,
+};
+
 interface Props {
   displayed: boolean;
   optionsToShow: string;
@@ -18,19 +25,10 @@ export default function Options({
   optionsToShow,
   onExitClick,
 }: any) {
-
   return (
     <TransitionGroup component={null}>
       {displayed ? (
-        <CSSTransition
-          timeout={300}
-          classNames={{
-            enter: styles.enter,
-            enterActive: styles.enterActive,
-            exit: styles.exit,
-            exitActive: styles.exitActive,
-          }}
-        >
+        <CSSTransition timeout={300} classNames={transitionClasses}>
           <div className={styles.container}>
             <div className={styles.main}>
               <div className={styles.exit} onClick={onExitClick} />
