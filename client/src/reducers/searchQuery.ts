@@ -8,7 +8,6 @@ const searchQuery = (
 ) => {
   switch (action.type) {
     case 'SET_SEARCH_QUERRY':
-      console.log('set search query action')
       return action.searchQuery;
     default:
       return state;
