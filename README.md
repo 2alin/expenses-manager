@@ -33,11 +33,13 @@ It has the next features:
 
 - It shows suitable messages to the user, when there's an API error (not fetching data), in loading state or the filtered list is empty.
 
+- **Update [15-March]** It allows searching by query, either trying to find matches in the user name or the merchant one. The amazing thing about this new feature is that it's completely in sync with filtering by 'filter options', which means that you can have a more personalized search using both at the same time.
+
 I didn't know TypeScript before the project so I took the first 4-5 days to learn the basics of it and improve my skills on Redux. To be honest, at the beginning I had my doubts about the advantages of using TypeScript, but in the middle of the project I realized how helpful it was: providing useful auto completion on real time and notifying me when I used wrong values in order to avoid bugs even before compiling. I kinda like it now.
 
-Then I took around 6 days to create and polish the web application. It was an exciting journey and while working on it, I frequently changed the structure of the project or the components themselves to improve future maintenance and keep things organized. The hardest parts to implement were TypeScript and Redux at the beginning, but something curious happened: the same project structure helped me to learn and understand them better.
+Then I took around 6 days to create and polish the web application. It was an exciting journey and while working on it, I frequently changed the structure of the project or the components themselves to improve future maintenance and keep things organized. The hardest parts to implement were TypeScript and Redux at the beginning, but something curious happened: the same project structure helped me to learn and understand them better. **Update [15-March]** It was also tricky to find the right way to implement the 'search by query' and keep it in sync with 'filter by options', but at the end it was all awesome!
 
-About what I'm most proud, I specially enjoyed implementing language/currency conversion and the user filters feature. But what I loved the most was the whole journey of creating, fixing, improving and implementing new ideas in this project.
+About what I'm most proud, I specially enjoyed implementing language/currency conversion and the user filters feature (**Update [15-March]** specially searching by query). But what I loved the most was the whole journey of creating, fixing, improving and implementing new ideas in this project.
 
 
 Thank you so much, again. :blush:
@@ -45,6 +47,10 @@ Thank you so much, again. :blush:
 ## Video
 Follow the next link to see the app features on action:
 https://www.youtube.com/watch?v=H09dBKVesC4
+
+**Update [15-March]**
+And this other link to see how searching by query and by options are in sync:
+https://www.youtube.com/watch?v=hgsYAb0AWOQ
  
 ---
 
