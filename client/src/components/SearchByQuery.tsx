@@ -25,7 +25,7 @@ function SearchByQuery({
         className={styles.input}
         type="text"
         value={searchQuery}
-        onChange={e => onChange(e.target.value.trim(), filterOptions, currency)}
+        onChange={e => onChange(e.target.value, filterOptions, currency)}
       />
     </div>
   );

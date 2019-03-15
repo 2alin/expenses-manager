@@ -81,8 +81,9 @@ export const filterExpenses = (
 
   // filter by search query
   // this filter can be improved, let's set it as Work in Progress
-  if (searchQuery.length > 0) {
-    const regex = RegExp(searchQuery, 'i');
+  const searchQueryTrimmed = searchQuery.trim();
+  if (searchQueryTrimmed.length > 0) {
+    const regex = RegExp(searchQueryTrimmed, 'i');
     filteredList = filteredList.filter(expense => {
       const fullName = expense.user.first + ' ' + expense.user.last;
       const merchant = expense.merchant;
