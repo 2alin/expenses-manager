@@ -49,6 +49,7 @@ Follow the next link to see the app features on action:
 https://www.youtube.com/watch?v=H09dBKVesC4
 
 **Update [15-March]**
+
 And this other link to see how searching by query and by options are in sync:
 https://www.youtube.com/watch?v=hgsYAb0AWOQ
  
