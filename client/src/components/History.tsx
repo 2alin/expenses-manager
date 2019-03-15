@@ -62,9 +62,7 @@ class History extends React.Component<Props> {
         <div className={styles.bar}>
           {/* title */}
           <span>{this.props.trans.title}</span>
-          {/* Search Input */}
-          <SearchByQuery />
-          {/* filter section */}
+          {/* filter and search section */}
           <div className={styles.filterBar}>
             <TransitionGroup component={null}>
               {hadFiltered && (
@@ -73,6 +71,7 @@ class History extends React.Component<Props> {
                 </CSSTransition>
               )}
             </TransitionGroup>
+            <SearchByQuery />
             <FilterLink text={this.props.trans.filter} />
           </div>
         </div>

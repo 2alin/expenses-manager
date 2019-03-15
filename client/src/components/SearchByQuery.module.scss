@@ -1,0 +1,22 @@
+.container {
+  margin-right: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  border-bottom: 1px solid;
+  &::before {
+    position: absolute;
+    content: '';
+    top:0;
+    right:0;
+    bottom: 0;
+    width: 1rem;
+    background: url('../assets/icons/search.svg') no-repeat center / contain;
+  }
+}
+
+.input {
+  width: 80px;
+  background: transparent;
+  border: none;
+  color: #fff;
+}

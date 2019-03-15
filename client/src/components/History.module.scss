@@ -23,8 +23,11 @@
     flex: 1;
   }
 
+  
+
   .filterBar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     .filterDone {
       display: inline-block;
