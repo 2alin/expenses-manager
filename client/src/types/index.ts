@@ -64,21 +64,21 @@ export interface OptionsContainer {
 }
 
 export interface ExpenseToUpdate {
-  id: string,
-  comment: string,
+  id: string;
+  comment: string;
 }
 
 export interface SpentByCurrency {
-  [currency:string]: {
-    numberOfExpenses: number,
-    valueInOriginalCurrency: number
-  }
+  [currency: string]: {
+    numberOfExpenses: number;
+    valueInOriginalCurrency: number;
+  };
 }
 
 export interface Finance {
   budget: Amount;
   totalSpent: Amount;
-  spentByCurrency: SpentByCurrency,
+  spentByCurrency: SpentByCurrency;
   currencySet: string;
 }
 
@@ -88,7 +88,8 @@ export interface Store {
   filterOptions: FilterOptions;
   optionsContainer: OptionsContainer;
   expenseToUpdate: ExpenseToUpdate;
-  finance: Finance
+  finance: Finance;
+  searchQuery: string;
 }
 
 //-------------------
@@ -122,12 +123,18 @@ export interface VisibleOptionsAction {
 }
 
 export interface ExpenseToUpdateAction {
-  type: string,
-  id: string,
-  comment: string
+  type: string;
+  id: string;
+  comment: string;
 }
 
 export interface FilterAction {
   type: string;
   options: FilterOptions;
+  searchQuery: string;
+}
+
+export interface SetSearchQueryAction {
+  type:string;
+  searchQuery: string;
 }

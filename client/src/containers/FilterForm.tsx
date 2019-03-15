@@ -9,15 +9,16 @@ import { Store, FilterOptions } from '../types';
 import { trans } from '../utilities/i18n';
 
 const mapStateToProps = (state: Store) => ({
-  options: state.filterOptions,
   trans: trans[state.i18n.language].history.filterOptions,
+  options: state.filterOptions,
   currency: state.i18n.currency,
+  searchQuery: state.searchQuery,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-  onClick: (options: FilterOptions, currency: string) => {
+  onClick: (options: FilterOptions, currency: string, searchQuery:string) => {
     dispatch(setExpensesFilter(options));
-    dispatch(filterExpensesList(options, currency));
+    dispatch(filterExpensesList(options, currency, searchQuery));
     dispatch(setVisibleOptions(false, 'NONE'));
   },
 });

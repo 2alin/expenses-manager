@@ -36,7 +36,8 @@ export const convertCurrency = (amount: Amount, newCurrency: string) => {
 export const filterExpenses = (
   list: Array<Expense>,
   options: FilterOptions,
-  currency: string
+  currency: string,
+  searchQuery: string
 ) => {
   let filteredList = [...list];
 
@@ -78,8 +79,20 @@ export const filterExpenses = (
     );
   }
 
+  // filter by search query
+  // this filter can be improved, let's set it as Work in Progress
+  if (searchQuery.length > 0) {
+    const regex = RegExp(searchQuery, 'i');
+    filteredList = filteredList.filter(expense => {
+      const fullName = expense.user.first + ' ' + expense.user.last;
+      const merchant = expense.merchant;
+      return regex.test(fullName + ' ' + merchant);
+    });
+  }
+
   return filteredList;
 };
+
 
 export const getSpentByCurrency = (expenseList: Array<Expense>) => {
   // get a dictionary of the shape

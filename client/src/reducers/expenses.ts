@@ -29,7 +29,8 @@ const expenses = (state: Expenses = initialState, action: any) => {
       const filteredList = filterExpenses(
         state.completeList,
         action.options,
-        action.currency
+        action.currency,
+        action.searchQuery
       );
       return {
         ...state,

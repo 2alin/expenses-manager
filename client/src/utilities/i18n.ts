@@ -18,6 +18,8 @@ export const trans: Trans = {
           'Error while fetching data from the server. Please check if your API is running, and reload after that.',
         emptyListFilter:
           'You are getting an empty list with the filters you chose. Try changing your filter options.',
+        emptyListSearch:
+          'You are getting an empty list with the search query you typed. Try another one.',
         loading: 'loading',
       },
       footer: {
@@ -72,6 +74,8 @@ export const trans: Trans = {
           'Error mientras se obtenian datos del servidor. Revisa si la API se está ejecutando, y carga de nuevo la página.',
         emptyListFilter:
           'Obtuviste una lista vacía con los filtros que seleccionaste. Intenta cambiar las opciones de filtro.',
+        emptyListSearch:
+          'Obtuviste una lista vacía con el campo de busqueda que escribiste. Intenta uno diferente.',
         loading: 'cargando',
       },
       filterOptions: {

@@ -26,12 +26,15 @@ export const setExpensesList = (expensesList: Array<Expense>) => ({
 
 export const filterExpensesList = (
   options: FilterOptions,
-  currency: string
+  currency: string,
+  searchQuery: string
 ) => ({
   type: 'FILTER_EXPENSES_LIST',
   options,
   currency,
+  searchQuery
 });
+
 
 export const updateExpense = (expense: Expense) => ({
   type: 'UPDATE_EXPENSE',
@@ -48,6 +51,11 @@ export const setExpensesFilter = (options: FilterOptions) => ({
   type: 'SET_EXPENSES_FILTER',
   options,
 });
+
+export const setSearchQuery = (searchQuery: string) => ({
+  type:'SET_SEARCH_QUERRY',
+  searchQuery
+})
 
 export const goPrevPage = () => ({
   type: 'GO_PREV_PAGE',

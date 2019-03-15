@@ -9,7 +9,8 @@ interface Props {
   trans: any;
   options: FilterOptions;
   currency: string;
-  onClick: (options: FilterOptions, currency: string) => void;
+  searchQuery: string;
+  onClick: (options: FilterOptions, currency: string, searchQuery:string) => void;
 }
 
 class FilterForm extends React.Component<Props> {
@@ -82,7 +83,7 @@ class FilterForm extends React.Component<Props> {
         />
         <div>
           <button
-            onClick={() => this.props.onClick(this.state, this.props.currency)}
+            onClick={() => this.props.onClick(this.state, this.props.currency, this.props.searchQuery)}
           >
             {trans.filter}
           </button>

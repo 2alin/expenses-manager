@@ -3,6 +3,7 @@ import EmptyList from './EmptyList';
 import Pagination from './Pagination';
 import ExpenseCard from './ExpenseCard';
 import FilterLink from '../containers/FilterLink';
+import SearchByQuery from '../containers/SearchByQuery';
 import { getAllExpenses } from '../utilities/async';
 import { Filtered, Expense } from '../types';
 import styles from './History.module.scss';
@@ -21,6 +22,7 @@ interface Props {
   filtered: Filtered;
   currency: string;
   hadFiltered: boolean;
+  searchQuery: string;
   onFetched: (list: Array<Expense>, currency: string) => void;
 }
 
@@ -51,10 +53,9 @@ class History extends React.Component<Props> {
       total,
       itemsPerPage,
     } = this.props.filtered;
-    const { currency, hadFiltered } = this.props;
+    const { currency, hadFiltered, searchQuery } = this.props;
     const itemsToDisplay = filteredList.slice((page - 1) * 10, page * 10);
 
-    console.log(finalList);
     return (
       <div className={styles.container}>
         {/* History Top Bar */}
@@ -62,7 +63,7 @@ class History extends React.Component<Props> {
           {/* title */}
           <span>{this.props.trans.title}</span>
           {/* Search Input */}
-          <input type="text" onChange={this.handleChange} />
+          <SearchByQuery />
           {/* filter section */}
           <div className={styles.filterBar}>
             <TransitionGroup component={null}>
@@ -83,6 +84,7 @@ class History extends React.Component<Props> {
           </div>
         ) : (
           <EmptyList
+            searchQuery={searchQuery}
             hadFiltered={hadFiltered}
             hasError={this.state.hasError}
             trans={this.props.trans.messages}

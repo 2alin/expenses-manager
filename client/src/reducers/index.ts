@@ -5,6 +5,7 @@ import expenses from './expenses';
 import filterOptions from './filterOptions';
 import optionsContainer from './optionsContainer';
 import expenseToUpdate from './expenseToUpdate';
+import searchQuery from './searchQuery'
 
 const rootReducer = combineReducers({
   i18n,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   filterOptions,
   optionsContainer,
   expenseToUpdate,
-  finance
+  finance,
+  searchQuery
 });
 
 export default rootReducer;
