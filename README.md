@@ -11,6 +11,14 @@ cd client
 npm install
 npm start
 ```
+## Video
+Follow the next link to see the app features on action:
+https://www.youtube.com/watch?v=H09dBKVesC4
+
+**Update [15-March]**
+
+And this other link to see how searching by query and by options are in sync:
+https://www.youtube.com/watch?v=hgsYAb0AWOQ
 
 ## Project Description
 First of all, thank you for the opportunity and your valuable time reviewing my solution to this challenge. I learned a freaking lot from it and I'm very happy already because of that.
@@ -44,14 +52,6 @@ About what I'm most proud, I specially enjoyed implementing language/currency co
 
 Thank you so much, again. :blush:
 
-## Video
-Follow the next link to see the app features on action:
-https://www.youtube.com/watch?v=H09dBKVesC4
-
-**Update [15-March]**
-
-And this other link to see how searching by query and by options are in sync:
-https://www.youtube.com/watch?v=hgsYAb0AWOQ
  
 ---
 
