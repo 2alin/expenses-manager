@@ -5,7 +5,10 @@ const initialState = {
   optionsToShow: 'NONE',
 };
 
-const optionsContainer = (state:OptionsContainer = initialState, action: VisibleOptionsAction) => {
+const optionsContainer = (
+  state: OptionsContainer = initialState,
+  action: VisibleOptionsAction
+) => {
   switch (action.type) {
     case 'SET_VISIBLE_OPTIONS':
       return {

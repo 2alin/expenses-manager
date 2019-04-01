@@ -1,6 +1,5 @@
 import { EXRATES, BUDGET } from './constants';
 import { Amount, Expense, FilterOptions } from '../types';
-import CurrencyList from '../containers/CurrencyList';
 
 const doubleDigit = (value: number) => {
   // formats days and months numeric values inro 'dd' or 'mm'
