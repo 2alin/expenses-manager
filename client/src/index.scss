@@ -6,7 +6,8 @@ html {
   background: $first-color;
   background-image: repeating-linear-gradient(
     $inclination-value,
-    hsla(0, 0%, 100%, 0.1) 0 20px,
+    hsla(0, 0%, 100%, 0.1) 0,
+    hsla(0, 0%, 100%, 0.1) 20px,
     transparent 20px 40px
   );
 }
@@ -15,4 +16,3 @@ body {
   margin: 0;
   color: $dark-gray-color;
 }
-
