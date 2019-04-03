@@ -9,7 +9,7 @@ const mapStateToProps = (state: Store, ownProps: any) => ({
   filtered: state.expenses.filtered,
   currency: state.i18n.currency,
   hadFiltered: state.expenses.filtered.total !== state.expenses.total,
-  searchQuery: state.searchQuery
+  searchQuery: state.searchQuery,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({

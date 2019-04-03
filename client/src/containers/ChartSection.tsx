@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { Store, Expense } from '../types';
+import { Store } from '../types';
 import ChartSection from '../components/ChartSection';
 import {trans} from '../utilities/i18n'
 

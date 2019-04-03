@@ -24,7 +24,7 @@ export default function Options({
   displayed,
   optionsToShow,
   onExitClick,
-}: any) {
+}: Props) {
   return (
     <TransitionGroup component={null}>
       {displayed ? (

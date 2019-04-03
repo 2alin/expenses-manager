@@ -7,7 +7,6 @@ import SearchByQuery from '../containers/SearchByQuery';
 import { getAllExpenses } from '../utilities/async';
 import { Filtered, Expense } from '../types';
 import styles from './History.module.scss';
-import { trans } from '../utilities/i18n';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const transitionClasses = {
@@ -58,7 +57,7 @@ class History extends React.Component<Props> {
 
     return (
       <div className={styles.container}>
-        {/* History Top Bar */}
+        {/* Top Bar */}
         <div className={styles.bar}>
           {/* title */}
           <span>{this.props.trans.title}</span>
@@ -75,6 +74,7 @@ class History extends React.Component<Props> {
             <FilterLink text={this.props.trans.filter} />
           </div>
         </div>
+        {/* Body Content */}
         {filteredList.length > 0 ? (
           <div className={styles.list}>
             {itemsToDisplay.map(item => (
@@ -89,7 +89,7 @@ class History extends React.Component<Props> {
             trans={this.props.trans.messages}
           />
         )}
-        {/* History Bottom Bar */}
+        {/* Bottom Bar */}
         <Pagination
           {...{ trans: this.props.trans.footer, page, total, itemsPerPage }}
         />
