@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import PrevNextPage from '../components/PrevNextPage';
 import {goPrevPage} from '../actions'
-import {Store} from '../types'
 
 
 const mapDispatchToProps = (dispatch: any) => ({
